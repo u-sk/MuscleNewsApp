@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02EC02ED230A74FC009B45F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02EC02EC230A74FB009B45F2 /* GoogleService-Info.plist */; };
+		02EC02F3230B89D0009B45F2 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC02F2230B89D0009B45F2 /* Const.swift */; };
+		02EC02F5230B9024009B45F2 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC02F4230B9024009B45F2 /* PostData.swift */; };
+		02EC02F8230B9284009B45F2 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC02F6230B9284009B45F2 /* PostTableViewCell.swift */; };
+		02EC02F9230B9284009B45F2 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02EC02F7230B9284009B45F2 /* PostTableViewCell.xib */; };
+		02FC1BC7230A3FF500D7E961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BC6230A3FF500D7E961 /* AppDelegate.swift */; };
+		02FC1BC9230A3FF500D7E961 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BC8230A3FF500D7E961 /* ViewController.swift */; };
+		02FC1BCC230A3FF500D7E961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02FC1BCA230A3FF500D7E961 /* Main.storyboard */; };
+		02FC1BCE230A3FF600D7E961 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02FC1BCD230A3FF600D7E961 /* Assets.xcassets */; };
+		02FC1BD1230A3FF600D7E961 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02FC1BCF230A3FF600D7E961 /* LaunchScreen.storyboard */; };
+		02FC1BDB230A409800D7E961 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BDA230A409800D7E961 /* LoginViewController.swift */; };
+		02FC1BDD230A418A00D7E961 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BDC230A418A00D7E961 /* HomeViewController.swift */; };
+		02FC1BE0230A41AC00D7E961 /* ImageSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BDF230A41AC00D7E961 /* ImageSelectViewController.swift */; };
+		02FC1BE2230A41CF00D7E961 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BE1230A41CF00D7E961 /* PostViewController.swift */; };
+		02FC1BE4230A41DE00D7E961 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BE3230A41DE00D7E961 /* SettingViewController.swift */; };
+		02FC1BE6230A41FB00D7E961 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BE5230A41FB00D7E961 /* CommentViewController.swift */; };
+		02FC1BE8230A420F00D7E961 /* MakeCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BE7230A420F00D7E961 /* MakeCategoryViewController.swift */; };
+		02FC1BEA230A422E00D7E961 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BE9230A422E00D7E961 /* SearchViewController.swift */; };
+		02FC1BEC230A424000D7E961 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BEB230A424000D7E961 /* SearchResultViewController.swift */; };
+		02FC1BEE230A426300D7E961 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BED230A426300D7E961 /* VideoViewController.swift */; };
+		02FC1BF0230A428400D7E961 /* VideoSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BEF230A428400D7E961 /* VideoSelectViewController.swift */; };
+		F3EE70826F3BC1CEF3E45AC4 /* Pods_MuscleNewsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAFA53EEBF4C343703514516 /* Pods_MuscleNewsApp.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		02EC02EC230A74FB009B45F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		02EC02F2230B89D0009B45F2 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		02EC02F4230B9024009B45F2 /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
+		02EC02F6230B9284009B45F2 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		02EC02F7230B9284009B45F2 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		02FC1BC3230A3FF500D7E961 /* MuscleNewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuscleNewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02FC1BC6230A3FF500D7E961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		02FC1BC8230A3FF500D7E961 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		02FC1BCB230A3FF500D7E961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		02FC1BCD230A3FF600D7E961 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		02FC1BD0230A3FF600D7E961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		02FC1BD2230A3FF600D7E961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02FC1BDA230A409800D7E961 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		02FC1BDC230A418A00D7E961 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		02FC1BDF230A41AC00D7E961 /* ImageSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectViewController.swift; sourceTree = "<group>"; };
+		02FC1BE1230A41CF00D7E961 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		02FC1BE3230A41DE00D7E961 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		02FC1BE5230A41FB00D7E961 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		02FC1BE7230A420F00D7E961 /* MakeCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCategoryViewController.swift; sourceTree = "<group>"; };
+		02FC1BE9230A422E00D7E961 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		02FC1BEB230A424000D7E961 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		02FC1BED230A426300D7E961 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		02FC1BEF230A428400D7E961 /* VideoSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSelectViewController.swift; sourceTree = "<group>"; };
+		D52774E2855B2D9B4D55F5A3 /* Pods-MuscleNewsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleNewsApp.debug.xcconfig"; path = "Target Support Files/Pods-MuscleNewsApp/Pods-MuscleNewsApp.debug.xcconfig"; sourceTree = "<group>"; };
+		DAFA53EEBF4C343703514516 /* Pods_MuscleNewsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuscleNewsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F966CB961C3F81DAC2D75F0D /* Pods-MuscleNewsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleNewsApp.release.xcconfig"; path = "Target Support Files/Pods-MuscleNewsApp/Pods-MuscleNewsApp.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		02FC1BC0230A3FF500D7E961 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3EE70826F3BC1CEF3E45AC4 /* Pods_MuscleNewsApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02FC1BBA230A3FF500D7E961 = {
+			isa = PBXGroup;
+			children = (
+				02FC1BC5230A3FF500D7E961 /* MuscleNewsApp */,
+				02FC1BC4230A3FF500D7E961 /* Products */,
+				5341941679C9B2C9A5397D8A /* Pods */,
+				E947D9FE5A8011EE4D2AA335 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		02FC1BC4230A3FF500D7E961 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				02FC1BC3230A3FF500D7E961 /* MuscleNewsApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		02FC1BC5230A3FF500D7E961 /* MuscleNewsApp */ = {
+			isa = PBXGroup;
+			children = (
+				02EC02F2230B89D0009B45F2 /* Const.swift */,
+				02EC02F4230B9024009B45F2 /* PostData.swift */,
+				02FC1BC6230A3FF500D7E961 /* AppDelegate.swift */,
+				02FC1BC8230A3FF500D7E961 /* ViewController.swift */,
+				02FC1BCA230A3FF500D7E961 /* Main.storyboard */,
+				02FC1BCD230A3FF600D7E961 /* Assets.xcassets */,
+				02FC1BCF230A3FF600D7E961 /* LaunchScreen.storyboard */,
+				02FC1BD2230A3FF600D7E961 /* Info.plist */,
+				02EC02EC230A74FB009B45F2 /* GoogleService-Info.plist */,
+				02FC1BDA230A409800D7E961 /* LoginViewController.swift */,
+				02FC1BDC230A418A00D7E961 /* HomeViewController.swift */,
+				02FC1BDF230A41AC00D7E961 /* ImageSelectViewController.swift */,
+				02FC1BE1230A41CF00D7E961 /* PostViewController.swift */,
+				02FC1BE3230A41DE00D7E961 /* SettingViewController.swift */,
+				02FC1BE5230A41FB00D7E961 /* CommentViewController.swift */,
+				02FC1BE7230A420F00D7E961 /* MakeCategoryViewController.swift */,
+				02FC1BE9230A422E00D7E961 /* SearchViewController.swift */,
+				02FC1BEB230A424000D7E961 /* SearchResultViewController.swift */,
+				02FC1BED230A426300D7E961 /* VideoViewController.swift */,
+				02FC1BEF230A428400D7E961 /* VideoSelectViewController.swift */,
+				02EC02F6230B9284009B45F2 /* PostTableViewCell.swift */,
+				02EC02F7230B9284009B45F2 /* PostTableViewCell.xib */,
+			);
+			path = MuscleNewsApp;
+			sourceTree = "<group>";
+		};
+		5341941679C9B2C9A5397D8A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D52774E2855B2D9B4D55F5A3 /* Pods-MuscleNewsApp.debug.xcconfig */,
+				F966CB961C3F81DAC2D75F0D /* Pods-MuscleNewsApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E947D9FE5A8011EE4D2AA335 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DAFA53EEBF4C343703514516 /* Pods_MuscleNewsApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		02FC1BC2230A3FF500D7E961 /* MuscleNewsApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02FC1BD5230A3FF600D7E961 /* Build configuration list for PBXNativeTarget "MuscleNewsApp" */;
+			buildPhases = (
+				D54606D15333410E79284D80 /* [CP] Check Pods Manifest.lock */,
+				02FC1BBF230A3FF500D7E961 /* Sources */,
+				02FC1BC0230A3FF500D7E961 /* Frameworks */,
+				02FC1BC1230A3FF500D7E961 /* Resources */,
+				20129C8A261F79846371EC8F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MuscleNewsApp;
+			productName = MuscleNewsApp;
+			productReference = 02FC1BC3230A3FF500D7E961 /* MuscleNewsApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		02FC1BBB230A3FF500D7E961 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Swift-Beginner";
+				TargetAttributes = {
+					02FC1BC2230A3FF500D7E961 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 02FC1BBE230A3FF500D7E961 /* Build configuration list for PBXProject "MuscleNewsApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 02FC1BBA230A3FF500D7E961;
+			productRefGroup = 02FC1BC4230A3FF500D7E961 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				02FC1BC2230A3FF500D7E961 /* MuscleNewsApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		02FC1BC1230A3FF500D7E961 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02FC1BD1230A3FF600D7E961 /* LaunchScreen.storyboard in Resources */,
+				02EC02ED230A74FC009B45F2 /* GoogleService-Info.plist in Resources */,
+				02FC1BCE230A3FF600D7E961 /* Assets.xcassets in Resources */,
+				02EC02F9230B9284009B45F2 /* PostTableViewCell.xib in Resources */,
+				02FC1BCC230A3FF500D7E961 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		20129C8A261F79846371EC8F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuscleNewsApp/Pods-MuscleNewsApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuscleNewsApp/Pods-MuscleNewsApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MuscleNewsApp/Pods-MuscleNewsApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D54606D15333410E79284D80 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MuscleNewsApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		02FC1BBF230A3FF500D7E961 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02FC1BEA230A422E00D7E961 /* SearchViewController.swift in Sources */,
+				02FC1BE8230A420F00D7E961 /* MakeCategoryViewController.swift in Sources */,
+				02FC1BEE230A426300D7E961 /* VideoViewController.swift in Sources */,
+				02FC1BE6230A41FB00D7E961 /* CommentViewController.swift in Sources */,
+				02FC1BE2230A41CF00D7E961 /* PostViewController.swift in Sources */,
+				02FC1BDB230A409800D7E961 /* LoginViewController.swift in Sources */,
+				02FC1BC9230A3FF500D7E961 /* ViewController.swift in Sources */,
+				02FC1BC7230A3FF500D7E961 /* AppDelegate.swift in Sources */,
+				02FC1BE0230A41AC00D7E961 /* ImageSelectViewController.swift in Sources */,
+				02FC1BEC230A424000D7E961 /* SearchResultViewController.swift in Sources */,
+				02EC02F5230B9024009B45F2 /* PostData.swift in Sources */,
+				02EC02F8230B9284009B45F2 /* PostTableViewCell.swift in Sources */,
+				02FC1BF0230A428400D7E961 /* VideoSelectViewController.swift in Sources */,
+				02FC1BE4230A41DE00D7E961 /* SettingViewController.swift in Sources */,
+				02FC1BDD230A418A00D7E961 /* HomeViewController.swift in Sources */,
+				02EC02F3230B89D0009B45F2 /* Const.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		02FC1BCA230A3FF500D7E961 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02FC1BCB230A3FF500D7E961 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		02FC1BCF230A3FF600D7E961 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02FC1BD0230A3FF600D7E961 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		02FC1BD3230A3FF600D7E961 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		02FC1BD4230A3FF600D7E961 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		02FC1BD6230A3FF600D7E961 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D52774E2855B2D9B4D55F5A3 /* Pods-MuscleNewsApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JKGDBQG2CB;
+				INFOPLIST_FILE = MuscleNewsApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.u-sk89.MuscleNewsApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		02FC1BD7230A3FF600D7E961 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F966CB961C3F81DAC2D75F0D /* Pods-MuscleNewsApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JKGDBQG2CB;
+				INFOPLIST_FILE = MuscleNewsApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.u-sk89.MuscleNewsApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		02FC1BBE230A3FF500D7E961 /* Build configuration list for PBXProject "MuscleNewsApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02FC1BD3230A3FF600D7E961 /* Debug */,
+				02FC1BD4230A3FF600D7E961 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02FC1BD5230A3FF600D7E961 /* Build configuration list for PBXNativeTarget "MuscleNewsApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02FC1BD6230A3FF600D7E961 /* Debug */,
+				02FC1BD7230A3FF600D7E961 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 02FC1BBB230A3FF500D7E961 /* Project object */;
+}
