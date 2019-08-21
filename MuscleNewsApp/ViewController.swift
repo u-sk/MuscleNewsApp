@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     func setupTab() {
         
         // 画像のファイル名を指定してESTabBarControllerを作成する
-        let tabBarController: ESTabBarController! = ESTabBarController(tabIconNames: ["home", "youtube", "camera", "search", "setting"])
+        let tabBarController: ESTabBarController! = ESTabBarController(tabIconNames: ["home", "youtube", "camera", "search", "map"])
         
         // 背景色、選択時の色を設定する
         tabBarController.selectedColor = UIColor(red: 250/255, green: 128/255, blue: 114/255, alpha: 1)
@@ -44,15 +44,15 @@ class ViewController: UIViewController {
         tabBarController.didMove(toParent: self)
         
         // タブをタップした時に表示するViewControllerを設定する
-        let homeViewController = storyboard?.instantiateViewController(withIdentifier: "Home")
+        let navigationController = storyboard?.instantiateViewController(withIdentifier: "Nav")
         let videoViewController = storyboard?.instantiateViewController(withIdentifier: "Video")
-        let searchViewController = storyboard?.instantiateViewController(withIdentifier: "Search")
-        let settingViewController = storyboard?.instantiateViewController(withIdentifier: "Setting")
-        
-        tabBarController.setView(homeViewController, at: 0)
+        let searchCollectionViewController = storyboard?.instantiateViewController(withIdentifier: "Search")
+        let mapViewController = storyboard?.instantiateViewController(withIdentifier: "Map")
+
+        tabBarController.setView(navigationController, at: 0)
         tabBarController.setView(videoViewController, at: 1)
-        tabBarController.setView(searchViewController, at: 3)
-        tabBarController.setView(settingViewController, at: 4)
+        tabBarController.setView(searchCollectionViewController, at: 3)
+        tabBarController.setView(mapViewController, at: 4)
         
         // 真ん中のタブはボタンとして扱う
         tabBarController.highlightButton(at: 2)

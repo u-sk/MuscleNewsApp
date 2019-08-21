@@ -20,6 +20,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.hidesBarsOnTap = false
 
         // Do any additional setup after loading the view.
         // テーブルビューデリゲート

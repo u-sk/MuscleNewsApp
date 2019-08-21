@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02A1A4A4230CFB8C0086D2A2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A1A4A3230CFB8C0086D2A2 /* MapViewController.swift */; };
 		02EC02ED230A74FC009B45F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02EC02EC230A74FB009B45F2 /* GoogleService-Info.plist */; };
 		02EC02F3230B89D0009B45F2 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC02F2230B89D0009B45F2 /* Const.swift */; };
 		02EC02F5230B9024009B45F2 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC02F4230B9024009B45F2 /* PostData.swift */; };
 		02EC02F8230B9284009B45F2 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC02F6230B9284009B45F2 /* PostTableViewCell.swift */; };
 		02EC02F9230B9284009B45F2 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02EC02F7230B9284009B45F2 /* PostTableViewCell.xib */; };
+		02F69070230D538B00CB70CE /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F6906F230D538B00CB70CE /* SearchCollectionViewController.swift */; };
+		02F69073230D57CA00CB70CE /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F69071230D57CA00CB70CE /* SearchCollectionViewCell.swift */; };
+		02F69074230D57CA00CB70CE /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F69072230D57CA00CB70CE /* SearchCollectionViewCell.xib */; };
 		02FC1BC7230A3FF500D7E961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BC6230A3FF500D7E961 /* AppDelegate.swift */; };
 		02FC1BC9230A3FF500D7E961 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BC8230A3FF500D7E961 /* ViewController.swift */; };
 		02FC1BCC230A3FF500D7E961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02FC1BCA230A3FF500D7E961 /* Main.storyboard */; };
@@ -24,19 +28,21 @@
 		02FC1BE4230A41DE00D7E961 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BE3230A41DE00D7E961 /* SettingViewController.swift */; };
 		02FC1BE6230A41FB00D7E961 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BE5230A41FB00D7E961 /* CommentViewController.swift */; };
 		02FC1BE8230A420F00D7E961 /* MakeCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BE7230A420F00D7E961 /* MakeCategoryViewController.swift */; };
-		02FC1BEA230A422E00D7E961 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BE9230A422E00D7E961 /* SearchViewController.swift */; };
-		02FC1BEC230A424000D7E961 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BEB230A424000D7E961 /* SearchResultViewController.swift */; };
 		02FC1BEE230A426300D7E961 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BED230A426300D7E961 /* VideoViewController.swift */; };
 		02FC1BF0230A428400D7E961 /* VideoSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BEF230A428400D7E961 /* VideoSelectViewController.swift */; };
 		F3EE70826F3BC1CEF3E45AC4 /* Pods_MuscleNewsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAFA53EEBF4C343703514516 /* Pods_MuscleNewsApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02A1A4A3230CFB8C0086D2A2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		02EC02EC230A74FB009B45F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		02EC02F2230B89D0009B45F2 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		02EC02F4230B9024009B45F2 /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
 		02EC02F6230B9284009B45F2 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		02EC02F7230B9284009B45F2 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		02F6906F230D538B00CB70CE /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
+		02F69071230D57CA00CB70CE /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		02F69072230D57CA00CB70CE /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
 		02FC1BC3230A3FF500D7E961 /* MuscleNewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuscleNewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02FC1BC6230A3FF500D7E961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02FC1BC8230A3FF500D7E961 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,8 +57,6 @@
 		02FC1BE3230A41DE00D7E961 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		02FC1BE5230A41FB00D7E961 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		02FC1BE7230A420F00D7E961 /* MakeCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCategoryViewController.swift; sourceTree = "<group>"; };
-		02FC1BE9230A422E00D7E961 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		02FC1BEB230A424000D7E961 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		02FC1BED230A426300D7E961 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		02FC1BEF230A428400D7E961 /* VideoSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSelectViewController.swift; sourceTree = "<group>"; };
 		D52774E2855B2D9B4D55F5A3 /* Pods-MuscleNewsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleNewsApp.debug.xcconfig"; path = "Target Support Files/Pods-MuscleNewsApp/Pods-MuscleNewsApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,12 +113,14 @@
 				02FC1BE3230A41DE00D7E961 /* SettingViewController.swift */,
 				02FC1BE5230A41FB00D7E961 /* CommentViewController.swift */,
 				02FC1BE7230A420F00D7E961 /* MakeCategoryViewController.swift */,
-				02FC1BE9230A422E00D7E961 /* SearchViewController.swift */,
-				02FC1BEB230A424000D7E961 /* SearchResultViewController.swift */,
 				02FC1BED230A426300D7E961 /* VideoViewController.swift */,
 				02FC1BEF230A428400D7E961 /* VideoSelectViewController.swift */,
 				02EC02F6230B9284009B45F2 /* PostTableViewCell.swift */,
 				02EC02F7230B9284009B45F2 /* PostTableViewCell.xib */,
+				02A1A4A3230CFB8C0086D2A2 /* MapViewController.swift */,
+				02F6906F230D538B00CB70CE /* SearchCollectionViewController.swift */,
+				02F69071230D57CA00CB70CE /* SearchCollectionViewCell.swift */,
+				02F69072230D57CA00CB70CE /* SearchCollectionViewCell.xib */,
 			);
 			path = MuscleNewsApp;
 			sourceTree = "<group>";
@@ -196,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02F69074230D57CA00CB70CE /* SearchCollectionViewCell.xib in Resources */,
 				02FC1BD1230A3FF600D7E961 /* LaunchScreen.storyboard in Resources */,
 				02EC02ED230A74FC009B45F2 /* GoogleService-Info.plist in Resources */,
 				02FC1BCE230A3FF600D7E961 /* Assets.xcassets in Resources */,
@@ -253,7 +260,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02FC1BEA230A422E00D7E961 /* SearchViewController.swift in Sources */,
 				02FC1BE8230A420F00D7E961 /* MakeCategoryViewController.swift in Sources */,
 				02FC1BEE230A426300D7E961 /* VideoViewController.swift in Sources */,
 				02FC1BE6230A41FB00D7E961 /* CommentViewController.swift in Sources */,
@@ -262,13 +268,15 @@
 				02FC1BC9230A3FF500D7E961 /* ViewController.swift in Sources */,
 				02FC1BC7230A3FF500D7E961 /* AppDelegate.swift in Sources */,
 				02FC1BE0230A41AC00D7E961 /* ImageSelectViewController.swift in Sources */,
-				02FC1BEC230A424000D7E961 /* SearchResultViewController.swift in Sources */,
 				02EC02F5230B9024009B45F2 /* PostData.swift in Sources */,
+				02F69070230D538B00CB70CE /* SearchCollectionViewController.swift in Sources */,
 				02EC02F8230B9284009B45F2 /* PostTableViewCell.swift in Sources */,
+				02F69073230D57CA00CB70CE /* SearchCollectionViewCell.swift in Sources */,
 				02FC1BF0230A428400D7E961 /* VideoSelectViewController.swift in Sources */,
 				02FC1BE4230A41DE00D7E961 /* SettingViewController.swift in Sources */,
 				02FC1BDD230A418A00D7E961 /* HomeViewController.swift in Sources */,
 				02EC02F3230B89D0009B45F2 /* Const.swift in Sources */,
+				02A1A4A4230CFB8C0086D2A2 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
