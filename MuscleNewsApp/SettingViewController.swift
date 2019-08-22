@@ -54,9 +54,11 @@ class SettingViewController: UIViewController {
         let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
         self.present(loginViewController!, animated: true, completion: nil)
         
+        self.navigationController?.popToRootViewController(animated: true)
+        
         // ログイン画面から戻ってきた時のためにホーム画面（index = 0）を選択している状態にしておく
-        let tabBarController = parent as! ESTabBarController
-        tabBarController.setSelectedIndex(0, animated: false)
+//        let tabBarController = parent as! ESTabBarController
+//        tabBarController.setSelectedIndex(0, animated: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -10,16 +10,35 @@ import UIKit
 import Firebase
 import SVProgressHUD
 
-class MakeCategoryViewController: UIViewController {
+class MakeCategoryViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var makeCategoryTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // テキストフィールドデリゲート
+        makeCategoryTextField.delegate = self
     }
     
-    // HUDで投稿完了を表示する
-//    SVProgressHUD.showSuccess(withStatus: "カテゴリーが作成されました")
+    // 作成ボタンをタップした時
+    @IBAction func pushCategoryButton(_ sender: Any) {
+        // HUDで作成完了を表示する
+        SVProgressHUD.showSuccess(withStatus: "カテゴリーを作成しました")
+    }
+    
+    // キャンセルボタンをタップした時
+    @IBAction func cancelButton(_ sender: Any) {
+        // 画面を閉じる
+        self.dismiss(animated: true, completion: nil)
+        // HUDでキャンセルを表示する
+        SVProgressHUD.showSuccess(withStatus: "キャンセルされました")
+    }
+    
+    
+    
 
     /*
     // MARK: - Navigation

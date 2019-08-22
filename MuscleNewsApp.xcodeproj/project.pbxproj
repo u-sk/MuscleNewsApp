@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02651479230E993E0075D139 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02651477230E993E0075D139 /* VideoTableViewCell.swift */; };
+		0265147A230E993E0075D139 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02651478230E993E0075D139 /* VideoTableViewCell.xib */; };
+		0265147C230E9BCD0075D139 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0265147B230E9BCD0075D139 /* Video.swift */; };
 		02A1A4A4230CFB8C0086D2A2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A1A4A3230CFB8C0086D2A2 /* MapViewController.swift */; };
 		02EC02ED230A74FC009B45F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02EC02EC230A74FB009B45F2 /* GoogleService-Info.plist */; };
 		02EC02F3230B89D0009B45F2 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC02F2230B89D0009B45F2 /* Const.swift */; };
@@ -29,11 +32,13 @@
 		02FC1BE6230A41FB00D7E961 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BE5230A41FB00D7E961 /* CommentViewController.swift */; };
 		02FC1BE8230A420F00D7E961 /* MakeCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BE7230A420F00D7E961 /* MakeCategoryViewController.swift */; };
 		02FC1BEE230A426300D7E961 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BED230A426300D7E961 /* VideoViewController.swift */; };
-		02FC1BF0230A428400D7E961 /* VideoSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BEF230A428400D7E961 /* VideoSelectViewController.swift */; };
 		F3EE70826F3BC1CEF3E45AC4 /* Pods_MuscleNewsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAFA53EEBF4C343703514516 /* Pods_MuscleNewsApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02651477230E993E0075D139 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		02651478230E993E0075D139 /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
+		0265147B230E9BCD0075D139 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		02A1A4A3230CFB8C0086D2A2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		02EC02EC230A74FB009B45F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		02EC02F2230B89D0009B45F2 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
@@ -58,7 +63,6 @@
 		02FC1BE5230A41FB00D7E961 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		02FC1BE7230A420F00D7E961 /* MakeCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCategoryViewController.swift; sourceTree = "<group>"; };
 		02FC1BED230A426300D7E961 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
-		02FC1BEF230A428400D7E961 /* VideoSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSelectViewController.swift; sourceTree = "<group>"; };
 		D52774E2855B2D9B4D55F5A3 /* Pods-MuscleNewsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleNewsApp.debug.xcconfig"; path = "Target Support Files/Pods-MuscleNewsApp/Pods-MuscleNewsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DAFA53EEBF4C343703514516 /* Pods_MuscleNewsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuscleNewsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F966CB961C3F81DAC2D75F0D /* Pods-MuscleNewsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleNewsApp.release.xcconfig"; path = "Target Support Files/Pods-MuscleNewsApp/Pods-MuscleNewsApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,14 +117,16 @@
 				02FC1BE3230A41DE00D7E961 /* SettingViewController.swift */,
 				02FC1BE5230A41FB00D7E961 /* CommentViewController.swift */,
 				02FC1BE7230A420F00D7E961 /* MakeCategoryViewController.swift */,
-				02FC1BED230A426300D7E961 /* VideoViewController.swift */,
-				02FC1BEF230A428400D7E961 /* VideoSelectViewController.swift */,
 				02EC02F6230B9284009B45F2 /* PostTableViewCell.swift */,
 				02EC02F7230B9284009B45F2 /* PostTableViewCell.xib */,
 				02A1A4A3230CFB8C0086D2A2 /* MapViewController.swift */,
 				02F6906F230D538B00CB70CE /* SearchCollectionViewController.swift */,
 				02F69071230D57CA00CB70CE /* SearchCollectionViewCell.swift */,
 				02F69072230D57CA00CB70CE /* SearchCollectionViewCell.xib */,
+				02FC1BED230A426300D7E961 /* VideoViewController.swift */,
+				02651477230E993E0075D139 /* VideoTableViewCell.swift */,
+				02651478230E993E0075D139 /* VideoTableViewCell.xib */,
+				0265147B230E9BCD0075D139 /* Video.swift */,
 			);
 			path = MuscleNewsApp;
 			sourceTree = "<group>";
@@ -154,6 +160,7 @@
 				02FC1BC0230A3FF500D7E961 /* Frameworks */,
 				02FC1BC1230A3FF500D7E961 /* Resources */,
 				20129C8A261F79846371EC8F /* [CP] Embed Pods Frameworks */,
+				9362A1C9B7A846E8CDBB11A3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,6 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0265147A230E993E0075D139 /* VideoTableViewCell.xib in Resources */,
 				02F69074230D57CA00CB70CE /* SearchCollectionViewCell.xib in Resources */,
 				02FC1BD1230A3FF600D7E961 /* LaunchScreen.storyboard in Resources */,
 				02EC02ED230A74FC009B45F2 /* GoogleService-Info.plist in Resources */,
@@ -229,6 +237,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MuscleNewsApp/Pods-MuscleNewsApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9362A1C9B7A846E8CDBB11A3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuscleNewsApp/Pods-MuscleNewsApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuscleNewsApp/Pods-MuscleNewsApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MuscleNewsApp/Pods-MuscleNewsApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D54606D15333410E79284D80 /* [CP] Check Pods Manifest.lock */ = {
@@ -272,11 +297,12 @@
 				02F69070230D538B00CB70CE /* SearchCollectionViewController.swift in Sources */,
 				02EC02F8230B9284009B45F2 /* PostTableViewCell.swift in Sources */,
 				02F69073230D57CA00CB70CE /* SearchCollectionViewCell.swift in Sources */,
-				02FC1BF0230A428400D7E961 /* VideoSelectViewController.swift in Sources */,
 				02FC1BE4230A41DE00D7E961 /* SettingViewController.swift in Sources */,
+				0265147C230E9BCD0075D139 /* Video.swift in Sources */,
 				02FC1BDD230A418A00D7E961 /* HomeViewController.swift in Sources */,
 				02EC02F3230B89D0009B45F2 /* Const.swift in Sources */,
 				02A1A4A4230CFB8C0086D2A2 /* MapViewController.swift in Sources */,
+				02651479230E993E0075D139 /* VideoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

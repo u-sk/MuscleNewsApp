@@ -53,6 +53,22 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("DEBUG_PRINT: viewWillAppear")
+                
+        // ＊ログアウト画面から新たにユーザーを作った後、settingVCからpopToRootViewController()で戻ってくる
+        // -- ここから --
+        // ログアウトを検出したら、一旦テーブルをクリアしてオブザーバーを削除する。
+        // テーブルをクリアする
+        postArray = []
+        tableView.reloadData()
+        // オブザーバーを削除する
+        let postsRef = Database.database().reference().child(Const.PostPath)
+        postsRef.removeAllObservers()
+        
+        // DatabaseのobserveEventが上記コードにより解除されたため
+        // falseとする
+        observing = false
+        
+         // -- ここまで --
         
         if Auth.auth().currentUser != nil {
             if self.observing == false {
@@ -70,6 +86,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         self.tableView.reloadData()
                     }
                 })
+               
                 // 要素が変更されたら該当のデータをpostArrayから一度削除した後に新しいデータを追加してTableViewを再表示する
                 postsRef.observe(.childChanged, with: { snapshot in
                     print("DEBUG_PRINT: .childChangedイベントが発生しました。")

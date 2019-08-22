@@ -19,9 +19,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzX-NQ-spE">
-                        <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
-                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzX-NQ-spE">
+                        <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
@@ -32,14 +32,16 @@
                 <constraint firstAttribute="bottom" secondItem="uzX-NQ-spE" secondAttribute="bottom" id="9qD-Fm-kWf"/>
                 <constraint firstAttribute="trailing" secondItem="uzX-NQ-spE" secondAttribute="trailing" id="HFo-LB-eTy"/>
                 <constraint firstItem="uzX-NQ-spE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ri9-6b-aYL"/>
+                <constraint firstAttribute="trailing" secondItem="uzX-NQ-spE" secondAttribute="trailing" id="icz-mH-hwY"/>
                 <constraint firstItem="uzX-NQ-spE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="kPO-vZ-7Ox"/>
+                <constraint firstAttribute="bottom" secondItem="uzX-NQ-spE" secondAttribute="bottom" id="pqO-AZ-OSd"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="170" height="168"/>
             <connections>
                 <outlet property="tapCellButton" destination="uzX-NQ-spE" id="Q4e-dP-ekN"/>
             </connections>
-            <point key="canvasLocation" x="143.47826086956522" y="71.651785714285708"/>
+            <point key="canvasLocation" x="-314" y="47"/>
         </collectionViewCell>
     </objects>
 </document>

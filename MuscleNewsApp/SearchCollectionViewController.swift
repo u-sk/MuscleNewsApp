@@ -58,56 +58,45 @@ class SearchCollectionViewController: UICollectionViewController {
         // indexPath.rowによって配置する画像を変える
         switch indexPath.row {
         case 0:
-            cell.tapCellButton.backgroundColor = UIColor.red
             let image = UIImage(named: "workout")
             cell.tapCellButton.setBackgroundImage(image, for: .normal)
             break
         case 1:
-            cell.tapCellButton.backgroundColor = UIColor.blue
             let image = UIImage(named: "muscle")
             cell.tapCellButton.setBackgroundImage(image, for: .normal)
             break
         case 2:
-            cell.tapCellButton.backgroundColor = UIColor.yellow
             let image = UIImage(named: "protein")
             cell.tapCellButton.setBackgroundImage(image, for: .normal)
             break
         case 3:
-            cell.tapCellButton.backgroundColor = UIColor.green
             let image = UIImage(named: "supplement")
             cell.tapCellButton.setBackgroundImage(image, for: .normal)
             break
         case 4:
-            cell.tapCellButton.backgroundColor = UIColor.green
             let image = UIImage(named: "weight-lost")
             cell.tapCellButton.setBackgroundImage(image, for: .normal)
             break
         case 5:
-            cell.tapCellButton.backgroundColor = UIColor.green
             let image = UIImage(named: "salad")
             cell.tapCellButton.setBackgroundImage(image, for: .normal)
             break
         case 6:
-            cell.tapCellButton.backgroundColor = UIColor.green
             let image = UIImage(named: "beaf")
             cell.tapCellButton.setBackgroundImage(image, for: .normal)
             break
         case 7:
-            cell.tapCellButton.backgroundColor = UIColor.green
             let image = UIImage(named: "chicken")
             cell.tapCellButton.setBackgroundImage(image, for: .normal)
             break
         case 8:
-            cell.tapCellButton.backgroundColor = UIColor.green
             let image = UIImage(named: "lamb")
             cell.tapCellButton.setBackgroundImage(image, for: .normal)
             break
         case 9:
-            cell.tapCellButton.backgroundColor = UIColor.green
             let image = UIImage(named: "supplement")
             cell.tapCellButton.setBackgroundImage(image, for: .normal)
             break
-            
         default:
             break
         }
@@ -172,40 +161,6 @@ class SearchCollectionViewController: UICollectionViewController {
         default:
             break
         }
-        
-        
-        
-        
-        // MARK: UICollectionViewDelegate
-        
-        /*
-         // Uncomment this method to specify if the specified item should be highlighted during tracking
-         override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-         return true
-         }
-         */
-        
-        /*
-         // Uncomment this method to specify if the specified item should be selected
-         override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-         return true
-         }
-         */
-        
-        /*
-         // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-         override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-         return false
-         }
-         
-         override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-         return false
-         }
-         
-         override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-         
-         }
-         */
         
     }
 }
