@@ -10,6 +10,7 @@
 		02651479230E993E0075D139 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02651477230E993E0075D139 /* VideoTableViewCell.swift */; };
 		0265147A230E993E0075D139 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02651478230E993E0075D139 /* VideoTableViewCell.xib */; };
 		0265147C230E9BCD0075D139 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0265147B230E9BCD0075D139 /* Video.swift */; };
+		02770A382312964C00D0C40B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02770A372312964C00D0C40B /* Category.swift */; };
 		02A1A4A4230CFB8C0086D2A2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A1A4A3230CFB8C0086D2A2 /* MapViewController.swift */; };
 		02EC02ED230A74FC009B45F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02EC02EC230A74FB009B45F2 /* GoogleService-Info.plist */; };
 		02EC02F3230B89D0009B45F2 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC02F2230B89D0009B45F2 /* Const.swift */; };
@@ -39,6 +40,7 @@
 		02651477230E993E0075D139 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		02651478230E993E0075D139 /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
 		0265147B230E9BCD0075D139 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		02770A372312964C00D0C40B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		02A1A4A3230CFB8C0086D2A2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		02EC02EC230A74FB009B45F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		02EC02F2230B89D0009B45F2 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				02651477230E993E0075D139 /* VideoTableViewCell.swift */,
 				02651478230E993E0075D139 /* VideoTableViewCell.xib */,
 				0265147B230E9BCD0075D139 /* Video.swift */,
+				02770A372312964C00D0C40B /* Category.swift */,
 			);
 			path = MuscleNewsApp;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			files = (
 				02FC1BE8230A420F00D7E961 /* MakeCategoryViewController.swift in Sources */,
 				02FC1BEE230A426300D7E961 /* VideoViewController.swift in Sources */,
+				02770A382312964C00D0C40B /* Category.swift in Sources */,
 				02FC1BE6230A41FB00D7E961 /* CommentViewController.swift in Sources */,
 				02FC1BE2230A41CF00D7E961 /* PostViewController.swift in Sources */,
 				02FC1BDB230A409800D7E961 /* LoginViewController.swift in Sources */,

@@ -10,19 +10,21 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import SVProgressHUD
+import AVFoundation
 
 class VideoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     @IBOutlet weak var videoList: UITableView!
 
-    
     var videos:[Video] = []
+    
+    // URLを入れる変数
+    var videoID:String = ""
+     // URLを入れる配列
+    var videoIDArray = [String ]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
-        
-        
         // tableViewデリゲート
         videoList.dataSource = self
         videoList.delegate = self
@@ -36,7 +38,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func setupVideo() {
             SVProgressHUD.show()
-        Alamofire.request("https://www.googleapis.com/youtube/v3/search?key=[APIキー]&q=%E7%AD%8B%E3%83%88%E3%83%AC%0D%0A&part=id,snippet&maxResults=30&order=viewCount").responseJSON { response in
+        Alamofire.request("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&order=date&q=%E7%AD%8B%E3%83%88%E3%83%AC%0D%0A&type=video&key=APIキー").responseJSON { response in
             // 通信結果のJSON (ここまでがAlamofire)
             if let jsonObject = response.result.value {
                 // 使いやすいJSONにしてくれる(ここからSwiftyJSON)
@@ -52,14 +54,22 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
 //                    print("チャンネル名：\(subJson["snippet"]["channelTitle"])")
 //                    print("キャプション：\(subJson["snippet"]["description"])")
 //                    print("サムネ：\(subJson["snippet"]["thumbnails"]["medium"]["url"])")
+                    print("投稿日時：\(subJson["snippet"]["publishedAt"])")
+                    print("ビデオID：\(subJson["id"]["videoId"])")
                     
                     let imageUrl:String = subJson["snippet"]["thumbnails"]["medium"]["url"].string!
                     let image: UIImage? = UIImage(data: NSData(contentsOf: NSURL(string: imageUrl)! as URL)! as Data)
 
+                    // 動画再生のためのURL完成および配列に格納
+                    self.videoID = "https://www.youtube.com/watch?v=" + subJson["id"]["videoId"].string!
+                    print("URLです！：\(self.videoID)")
+                    self.videoIDArray.append(self.videoID)
+                    print("URLの配列です！：\(self.videoIDArray)")
                     
-                    let video: Video = Video.init(title: subJson["snippet"]["title"].string!, name: subJson["snippet"]["channelTitle"].string!, image: image!)
+                    let video: Video = Video.init(title: subJson["snippet"]["title"].string!, name: subJson["snippet"]["channelTitle"].string!, image: image!, videoid: self.videoID)
                     videoDatas.append(video)
-                    print(videoDatas)
+                    print("ビデオです！：\(video)")
+                    print("ビデオデータです！：\(videoDatas)")
                 }
                 self.videos = videoDatas
                 self.videoList.reloadData()
@@ -88,7 +98,12 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
             let point = touch!.location(in: self.videoList)
             let indexPath = videoList.indexPathForRow(at: point)
         print("ここが場所です：\(indexPath!.row)")
+        print("これがURLです：\(videoIDArray[indexPath!.row])")
         
+        // safaliへ画面遷移し、URLをもとにYoutubeを表示
+        if let url = URL(string: videoIDArray[indexPath!.row]) {
+            UIApplication.shared.open(url)
+        }
     }
 
 }

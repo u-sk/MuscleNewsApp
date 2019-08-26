@@ -9,10 +9,22 @@
 import UIKit
 import Firebase
 import SVProgressHUD
+import RealmSwift
+
 
 class PostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    // Realmインスタンスを取得する
+    let realm = try! Realm()
+    // categoryを定義
+    var category: Category!
+    
+    // DB内のタスクが格納されるリスト。
+    // 以降内容をアップデートするとリスト内は自動的に更新される。
+    var categoryArray = try! Realm().objects(Category.self)
+    
     var image: UIImage!
-    var categoryList = ["AAA", "BBB", "CCC", "DDD"]
+    var categoryList: [String] = []
     // pickerViewで選択した要素の入れ物
     var selectedCategory: String = ""
 
@@ -52,6 +64,53 @@ class PostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         dismiss(animated: true, completion: nil)
     }
     
+    // カテゴリー作成ボタンを押した時に実行されるメソッド
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 遷移させる
+        performSegue(withIdentifier: "toMakeCategory",sender: nil)
+    }
+    // segue "toMakeCategory"で画面遷移する時に呼ばれる
+    // Categoryクラスのインスタンスを生成してMakeCategoryViewControllerのcategoryプロパティに値を指定
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        let makeCategoryViewController:MakeCategoryViewController = segue.destination as! MakeCategoryViewController
+        let categoryData = Category()
+        let allCategoryData = realm.objects(Category.self)
+        if allCategoryData.count != 0 {
+            categoryData.id = allCategoryData.max(ofProperty: "id")! + 1
+        }
+        makeCategoryViewController.category = categoryData
+    }
+
+    // カテゴリ削除ボタンを押した時
+    @IBAction func deleteCategoryButton(_ sender: Any) {
+        // ポップアップを追加する
+        let alertController = UIAlertController(title: "選択したカテゴリーを削除しますか？", message: nil, preferredStyle: .alert)
+        let action:UIAlertAction = UIAlertAction(title: "削除", style: .default) { (void) in
+            // データベースから削除する
+            try! self.realm.write {
+                self.realm.delete(self.categoryArray[3])
+            }
+            // HUDで削除を表示する
+            SVProgressHUD.showSuccess(withStatus: "カテゴリーが削除されました")
+        }
+        let cancel:UIAlertAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
+        alertController.addAction(action)
+        alertController.addAction(cancel)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    // MakeCategoryViewController(カテゴリー作成画面)から戻ってきた時
+    override func viewWillAppear(_ animated: Bool) {
+        categoryArray = realm.objects(Category.self)
+        categoryList = []
+        
+        for category in categoryArray {
+            categoryList.append(category.categoryName)
+        }
+        pickerView.reloadAllComponents()
+
+    }
+
     // TextField以外をタップして閉じる
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         captionTextField.resignFirstResponder()
@@ -68,6 +127,32 @@ class PostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         // pickerViewDelegate設定
         pickerView.delegate = self
         pickerView.dataSource = self
+        
+        // 追加するデータを用意(初期値)
+        let categoryData1 = Category()
+        categoryData1.id = 1
+        categoryData1.categoryName = "AAA"
+        // データを追加
+        try! realm.write() {
+            realm.add(categoryData1, update: true)
+        }
+        
+        let categoryData2 = Category()
+        categoryData2.id = 2
+        categoryData2.categoryName = "BBB"
+        // データを追加
+        try! realm.write() {
+            realm.add(categoryData2, update: true)
+        }
+        
+        let categoryData3 = Category()
+        categoryData3.id = 3
+        categoryData3.categoryName = "CCC"
+        // データを追加
+        try! realm.write() {
+            realm.add(categoryData3, update: true)
+        }
+        
     }
     
     // UIPickerViewの列の数

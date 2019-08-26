@@ -23,7 +23,8 @@ class VideoTableViewCell: UITableViewCell {
     func setCell(_ video: Video) {
         self.titleTextField.text = video.title as String
         self.channelNameTextField.text = video.name as String
-        self.thumbnailImage.image = video.image 
+        self.thumbnailImage.image = video.image
+//        tapVideoButton.setTitle(video.videoid , for: .normal)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

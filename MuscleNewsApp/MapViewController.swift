@@ -11,20 +11,26 @@ import GoogleMaps
 import Alamofire
 import SwiftyJSON
 import SVProgressHUD
+import CoreLocation
 
 
-class MapViewController: UIViewController {
-
+class MapViewController: UIViewController, CLLocationManagerDelegate {
+    
+    var locationManager: CLLocationManager!
+    var latitude:Double = 0
+    var longitude:Double = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    self.makeMap()
+        setupLocationManager()
+        
+       
     }
     
     func makeMap() {
         SVProgressHUD.show()
         // 渋谷駅でカメラを作る
-        let camera = GMSCameraPosition.camera(withLatitude: 35.658034, longitude: 139.701636, zoom: 15.0)
+        let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: 15.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         view = mapView
         
@@ -36,9 +42,9 @@ class MapViewController: UIViewController {
         //        marker.map = mapView
         
         // HTTP通信
-        Alamofire.request("https://map.yahooapis.jp/search/local/V1/localSearch?cid=d8a23e9e64a4c817227ab09858bc1330&lat=35.658034&lon=139.701636&dist=2&query=%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B8%E3%83%A0%0A&appid=[APIキー]&output=json").responseJSON { response in
+        Alamofire.request("https://map.yahooapis.jp/search/local/V1/localSearch?cid=d8a23e9e64a4c817227ab09858bc1330&lat=\(latitude)&lon=\( longitude)&dist=2&query=%E3%82%B8%E3%83%A0%0D%0A%0D%0A%0D%0A&appid=APIキー-&output=json").responseJSON { response in
             // リクエスト
-//                        print("Request: \(String(describing: response.request))")
+            //                        print("Request: \(String(describing: response.request))")
             // レスポンス
             //            print("Response: \(String(describing: response.response))")
             // レスポンスの結果
@@ -56,7 +62,7 @@ class MapViewController: UIViewController {
                 // 第一引数のkeyは使わないので、_にする
                 for (_ ,subJson):(String, JSON) in features {
                     //                    print(subJson["Name"])
-                    //                    print(subJson["Property"]["Address"])
+                                        print(subJson["Property"]["Address"])
                     //                    print(subJson["Geometry"]["Coordinates"])
                     let name = subJson["Name"].stringValue
                     let address = subJson["Property"]["Address"].stringValue
@@ -77,19 +83,42 @@ class MapViewController: UIViewController {
                     marker.snippet = address
                     marker.map = mapView
                 }
-            } 
+            }
         }
         SVProgressHUD.dismiss()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func setupLocationManager() {
+        locationManager = CLLocationManager()
+        guard let locationManager = locationManager else { return }
+        locationManager.requestWhenInUseAuthorization()
+        
+        let status = CLLocationManager.authorizationStatus()
+        if status == .authorizedWhenInUse {
+            locationManager.delegate = self
+            locationManager.distanceFilter = 10
+            locationManager.startUpdatingLocation()
+        }
     }
-    */
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.first
+        latitude = location!.coordinate.latitude
+        longitude = location!.coordinate.longitude
+        print("これが緯度です\(latitude)")
+        print("これが経度です\(longitude)")
+        self.makeMap()
+    }
 
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

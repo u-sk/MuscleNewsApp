@@ -67,7 +67,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // DatabaseのobserveEventが上記コードにより解除されたため
         // falseとする
         observing = false
-        
          // -- ここまで --
         
         if Auth.auth().currentUser != nil {
@@ -207,6 +206,41 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
         }
     }
+    
+    // TableView を更新する
+//    tableView.reloadData()
+//    searchBar.showsCancelButton = true
+    
+    //  サーチバータップ時、検索結果を絞り込み表示(検索文字列が何もない場合の解消含む)
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        // キーボードを閉じる
+//        view.endEditing(true)
+//        
+//        db.collection("posts").whereField("category", isEqualTo: true)
+//            .getDocuments() { (querySnapshot, err) in
+//                if let err = err {
+//                    print("Error getting documents: \(err)")
+//                } else {
+//                    for document in querySnapshot!.documents {
+//                        print("\(document.documentID) => \(document.data())")
+//                    }
+//                }
+//        }
+
+        
+//        let ref = Database.database().reference().child("posts").queryOrdered(byChild: "category").queryStarting(atValue: searchBar.text!)
+//        print("refです：\(ref)")
+//        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+//            for item in snapshot.children {
+//                let snap = item as! DataSnapshot
+//                let dict = snap.value as! [String: Any]
+//                // データの中身
+//                print(dict)
+//                self.tableView.reloadData()
+//            }
+//        })
+    }
+
     
     /*
     // MARK: - Navigation

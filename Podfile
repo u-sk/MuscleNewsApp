@@ -19,4 +19,5 @@ target 'MuscleNewsApp' do
   pod 'GooglePlaces'
   pod 'Alamofire', '4.8.2'
   pod 'SwiftyJSON'
+  pod 'RealmSwift', '3.15.0'
 end

@@ -9,10 +9,16 @@
 import UIKit
 import Firebase
 import SVProgressHUD
+import RealmSwift
 
 class MakeCategoryViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var makeCategoryTextField: UITextField!
+    
+    // Realmインスタンスを取得
+    let realm = try! Realm()
+    // categoryを定義
+    var category: Category!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,18 +29,33 @@ class MakeCategoryViewController: UIViewController, UITextFieldDelegate {
         makeCategoryTextField.delegate = self
     }
     
+    
     // 作成ボタンをタップした時
     @IBAction func pushCategoryButton(_ sender: Any) {
-        // HUDで作成完了を表示する
-        SVProgressHUD.showSuccess(withStatus: "カテゴリーを作成しました")
+        // カテゴリー作成欄が空文字の場合、カテゴリー作成しない
+        if let title = makeCategoryTextField.text {
+            if title.isEmpty {
+                return
+            } else {
+                print(makeCategoryTextField.text!)
+                try! realm.write {
+                    // カテゴリーを追加
+                    self.category.categoryName = self.makeCategoryTextField.text!
+                    self.realm.add(self.category, update: true)
+                    // Realmデータベースファイルまでのパスを表示
+                    print(Realm.Configuration.defaultConfiguration.fileURL!)
+                    // 画面を閉じる
+                    dismiss(animated: true, completion: nil)
+                    // HUDで作成完了を表示する
+                    SVProgressHUD.showSuccess(withStatus: "カテゴリーを作成しました")
+                }
+            }
     }
-    
+    }
     // キャンセルボタンをタップした時
     @IBAction func cancelButton(_ sender: Any) {
         // 画面を閉じる
         self.dismiss(animated: true, completion: nil)
-        // HUDでキャンセルを表示する
-        SVProgressHUD.showSuccess(withStatus: "キャンセルされました")
     }
     
     

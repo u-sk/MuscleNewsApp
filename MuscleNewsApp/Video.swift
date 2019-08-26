@@ -12,10 +12,12 @@ class Video: NSObject {
     var title: String
     var name: String
     var image: UIImage
+    var videoid: String
 
-    init(title: String, name:String, image: UIImage) {
+    init(title: String, name:String, image: UIImage,  videoid:String) {
         self.title = title as String
         self.name = name as String
         self.image = image
+        self.videoid = videoid as String
     }
 }

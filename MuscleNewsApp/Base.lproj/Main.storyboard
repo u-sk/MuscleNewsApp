@@ -241,7 +241,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QMI-eC-8mQ">
-                                <rect key="frame" x="57" y="446" width="300" height="30"/>
+                                <rect key="frame" x="57" y="506" width="300" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="KfU-RN-pUu"/>
                                 </constraints>
@@ -250,7 +250,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="URL"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="参考URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eM-8i-7Iy">
-                                <rect key="frame" x="57" y="415" width="300" height="21"/>
+                                <rect key="frame" x="57" y="475" width="300" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="XTd-Bk-AdH"/>
                                 </constraints>
@@ -258,19 +258,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YxQ-Ze-AlB">
-                                <rect key="frame" x="57" y="355" width="300" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Twm-fw-Fks"/>
-                                </constraints>
-                                <state key="normal" title="カテゴリーを新たに作成"/>
-                                <connections>
-                                    <action selector="makeCategoryButton:" destination="9bp-mS-FmS" eventType="touchUpInside" id="Rp0-ZZ-uAD"/>
-                                    <segue destination="eR4-Da-u81" kind="show" id="J13-fY-x3O"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8HR-Fb-ahp">
-                                <rect key="frame" x="57" y="496" width="300" height="30"/>
+                                <rect key="frame" x="57" y="556" width="300" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="lMe-AN-2aL"/>
                                 </constraints>
@@ -280,7 +269,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tk-oU-hoB">
-                                <rect key="frame" x="57" y="536" width="300" height="30"/>
+                                <rect key="frame" x="57" y="596" width="300" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="W0c-IR-3N4"/>
                                 </constraints>
@@ -295,6 +284,27 @@
                                     <constraint firstAttribute="height" constant="120" id="l4m-Gj-Gvp"/>
                                 </constraints>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dj-hJ-Ps9">
+                                <rect key="frame" x="57" y="355" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="UZz-qi-jz3"/>
+                                </constraints>
+                                <state key="normal" title="カテゴリーを削除する"/>
+                                <connections>
+                                    <action selector="deleteCategoryButton:" destination="9bp-mS-FmS" eventType="touchUpInside" id="5Dr-VI-JRq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YxQ-Ze-AlB">
+                                <rect key="frame" x="57" y="405" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Twm-fw-Fks"/>
+                                </constraints>
+                                <state key="normal" title="カテゴリーを新たに作成"/>
+                                <connections>
+                                    <action selector="makeCategoryButton:" destination="9bp-mS-FmS" eventType="touchUpInside" id="Rp0-ZZ-uAD"/>
+                                    <segue destination="eR4-Da-u81" kind="show" identifier="toMakeCategory" id="J13-fY-x3O"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -304,24 +314,27 @@
                             <constraint firstItem="Q9u-Ud-OVe" firstAttribute="top" secondItem="g0i-NL-Pa1" secondAttribute="bottom" id="F8u-94-L6o"/>
                             <constraint firstItem="HGb-40-yzc" firstAttribute="trailing" secondItem="LvU-L9-H88" secondAttribute="trailing" constant="10" id="HPg-sz-ICz"/>
                             <constraint firstItem="Q9u-Ud-OVe" firstAttribute="centerX" secondItem="rlA-aI-oyW" secondAttribute="centerX" id="IhC-lA-vDq"/>
+                            <constraint firstItem="8dj-hJ-Ps9" firstAttribute="top" secondItem="Q9u-Ud-OVe" secondAttribute="bottom" id="QZF-Yc-7WF"/>
                             <constraint firstItem="HGb-40-yzc" firstAttribute="trailing" secondItem="Q9u-Ud-OVe" secondAttribute="trailing" id="UAO-Va-gQq"/>
                             <constraint firstItem="YxQ-Ze-AlB" firstAttribute="centerX" secondItem="rlA-aI-oyW" secondAttribute="centerX" id="WOt-KP-S1W"/>
                             <constraint firstItem="8HR-Fb-ahp" firstAttribute="top" secondItem="QMI-eC-8mQ" secondAttribute="bottom" constant="20" id="Wqj-hI-rsC"/>
                             <constraint firstItem="LvU-L9-H88" firstAttribute="bottom" secondItem="Vsx-HM-iR8" secondAttribute="bottom" id="Xrk-xj-Jh2"/>
                             <constraint firstItem="g0i-NL-Pa1" firstAttribute="centerX" secondItem="rlA-aI-oyW" secondAttribute="centerX" id="b8M-Ed-PBi"/>
+                            <constraint firstItem="8dj-hJ-Ps9" firstAttribute="centerX" secondItem="rlA-aI-oyW" secondAttribute="centerX" id="cQr-F5-zUf"/>
                             <constraint firstItem="4tk-oU-hoB" firstAttribute="top" secondItem="8HR-Fb-ahp" secondAttribute="bottom" constant="10" id="cRf-2K-65W"/>
-                            <constraint firstItem="3eM-8i-7Iy" firstAttribute="top" secondItem="YxQ-Ze-AlB" secondAttribute="bottom" constant="30" id="cUG-7D-KEp"/>
+                            <constraint firstItem="3eM-8i-7Iy" firstAttribute="top" secondItem="YxQ-Ze-AlB" secondAttribute="bottom" constant="40" id="cUG-7D-KEp"/>
                             <constraint firstItem="3eM-8i-7Iy" firstAttribute="centerX" secondItem="rlA-aI-oyW" secondAttribute="centerX" id="eQB-cc-T2f"/>
                             <constraint firstItem="QMI-eC-8mQ" firstAttribute="top" secondItem="3eM-8i-7Iy" secondAttribute="bottom" constant="10" id="eSA-w3-5qW"/>
                             <constraint firstItem="LvU-L9-H88" firstAttribute="leading" secondItem="Vsx-HM-iR8" secondAttribute="trailing" constant="10" id="flo-BL-R47"/>
                             <constraint firstItem="Vsx-HM-iR8" firstAttribute="leading" secondItem="HGb-40-yzc" secondAttribute="leading" constant="10" id="icB-Ec-u9G"/>
                             <constraint firstItem="g0i-NL-Pa1" firstAttribute="top" secondItem="LvU-L9-H88" secondAttribute="bottom" constant="30" id="lNI-Y4-Y4N"/>
+                            <constraint firstItem="YxQ-Ze-AlB" firstAttribute="top" secondItem="8dj-hJ-Ps9" secondAttribute="bottom" constant="20" id="loa-cp-A4V"/>
                             <constraint firstItem="Q9u-Ud-OVe" firstAttribute="leading" secondItem="HGb-40-yzc" secondAttribute="leading" id="m1Q-zU-5YD"/>
                             <constraint firstItem="Vsx-HM-iR8" firstAttribute="top" secondItem="HGb-40-yzc" secondAttribute="top" constant="20" id="nXL-I6-afU"/>
-                            <constraint firstItem="YxQ-Ze-AlB" firstAttribute="top" secondItem="Q9u-Ud-OVe" secondAttribute="bottom" id="szU-FM-pAr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HGb-40-yzc"/>
                     </view>
+                    <navigationItem key="navigationItem" id="xNE-QA-Ktg"/>
                     <connections>
                         <outlet property="captionTextField" destination="LvU-L9-H88" id="5X2-2h-vNa"/>
                         <outlet property="categoryLabel" destination="g0i-NL-Pa1" id="0QF-1v-fgH"/>
@@ -333,7 +346,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yTq-QZ-Tg8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1279.7101449275362" y="235.71428571428569"/>
+            <point key="canvasLocation" x="2189.8550724637685" y="235.71428571428569"/>
         </scene>
         <!--Comment View Controller-->
         <scene sceneID="oKa-UT-t2V">
@@ -361,37 +374,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTX-Xo-fVv">
-                                <rect key="frame" x="57" y="195" width="300" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="CRx-od-M1a"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FbQ-aK-fFe">
+                                <rect key="frame" x="192" y="219" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="投稿"/>
-                                <connections>
-                                    <action selector="postCommentButton:" destination="geF-SU-qAA" eventType="touchUpInside" id="4ri-2d-D1D"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsQ-eO-BfU">
-                                <rect key="frame" x="57" y="235" width="300" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="CMN-dS-SBi"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAG-Fy-JbI">
+                                <rect key="frame" x="169" y="299" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="キャンセル"/>
-                                <connections>
-                                    <action selector="cancelCommentButton:" destination="geF-SU-qAA" eventType="touchUpInside" id="jYB-Am-rbu"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="eAV-FS-6I2" firstAttribute="centerX" secondItem="XDY-yA-WOI" secondAttribute="centerX" id="6wW-cc-3wf"/>
-                            <constraint firstItem="xsQ-eO-BfU" firstAttribute="centerX" secondItem="XDY-yA-WOI" secondAttribute="centerX" id="KZn-WW-0PR"/>
-                            <constraint firstItem="cTX-Xo-fVv" firstAttribute="centerX" secondItem="XDY-yA-WOI" secondAttribute="centerX" id="Odj-qW-hMO"/>
                             <constraint firstItem="rWc-O4-HcT" firstAttribute="top" secondItem="eAV-FS-6I2" secondAttribute="bottom" constant="10" id="RT5-pz-ovJ"/>
-                            <constraint firstItem="xsQ-eO-BfU" firstAttribute="top" secondItem="cTX-Xo-fVv" secondAttribute="bottom" constant="10" id="VJH-2k-e1G"/>
                             <constraint firstItem="eAV-FS-6I2" firstAttribute="top" secondItem="C27-Rp-ie7" secondAttribute="top" constant="80" id="sRX-kS-sKp"/>
                             <constraint firstItem="rWc-O4-HcT" firstAttribute="centerX" secondItem="XDY-yA-WOI" secondAttribute="centerX" id="t3T-Yd-lxt"/>
-                            <constraint firstItem="cTX-Xo-fVv" firstAttribute="top" secondItem="rWc-O4-HcT" secondAttribute="bottom" constant="10" id="zdV-L8-dEw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="C27-Rp-ie7"/>
                     </view>
@@ -401,7 +400,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9j-LC-bi2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1944.9275362318842" y="235.71428571428569"/>
+            <point key="canvasLocation" x="2847.826086956522" y="-127.23214285714285"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Jdc-RB-EPn">
@@ -575,7 +574,7 @@
                                 </constraints>
                                 <state key="normal" title="作成"/>
                                 <connections>
-                                    <action selector="pushCategoryButton:" destination="eR4-Da-u81" eventType="touchUpInside" id="tyv-yY-8C5"/>
+                                    <action selector="pushCategoryButton:" destination="eR4-Da-u81" eventType="touchUpInside" id="TqI-an-a0s"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lO4-Fd-Amf">
@@ -585,7 +584,7 @@
                                 </constraints>
                                 <state key="normal" title="キャンセル"/>
                                 <connections>
-                                    <action selector="cancelButton:" destination="eR4-Da-u81" eventType="touchUpInside" id="1ff-8J-F7B"/>
+                                    <action selector="cancelButton:" destination="eR4-Da-u81" eventType="touchUpInside" id="FkF-Lq-twk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -608,7 +607,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56e-ox-seR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2600" y="235.71428571428569"/>
+            <point key="canvasLocation" x="3508.6956521739135" y="235.71428571428569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="z1x-bN-kFO">
