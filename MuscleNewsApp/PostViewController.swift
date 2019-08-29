@@ -24,7 +24,7 @@ class PostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     var categoryArray = try! Realm().objects(Category.self)
     
     var image: UIImage!
-    var categoryList: [String] = []
+//    var categoryList: [String] = []
     // pickerViewで選択した要素の入れ物
     var selectedCategory: String = ""
 
@@ -86,10 +86,19 @@ class PostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         // ポップアップを追加する
         let alertController = UIAlertController(title: "選択したカテゴリーを削除しますか？", message: nil, preferredStyle: .alert)
         let action:UIAlertAction = UIAlertAction(title: "削除", style: .default) { (void) in
-            // データベースから削除する
-            try! self.realm.write {
-                self.realm.delete(self.categoryArray[3])
+            
+            if self.pickerView.selectedRow(inComponent: 0) > 2 {
+                // データベースから削除する
+                try! self.realm.write {
+                    self.realm.delete(self.categoryArray[self.pickerView.selectedRow(inComponent: 0)])
+                }
+                // ピッカービュー更新
+                self.pickerView.reloadAllComponents()
+            } else {
+                SVProgressHUD.showSuccess(withStatus: "基本カテゴリーの為、削除できません")
+                return
             }
+
             // HUDで削除を表示する
             SVProgressHUD.showSuccess(withStatus: "カテゴリーが削除されました")
         }
@@ -102,13 +111,13 @@ class PostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     // MakeCategoryViewController(カテゴリー作成画面)から戻ってきた時
     override func viewWillAppear(_ animated: Bool) {
         categoryArray = realm.objects(Category.self)
-        categoryList = []
-        
-        for category in categoryArray {
-            categoryList.append(category.categoryName)
-        }
+//        categoryList = []
+//
+//        for category in categoryArray {
+//            categoryList.append(category.categoryName)
+//        }
+        // ピッカービュー更新
         pickerView.reloadAllComponents()
-
     }
 
     // TextField以外をタップして閉じる
@@ -162,18 +171,18 @@ class PostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     // UIPickerViewの行数、要素の全数
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return categoryList.count
+        return categoryArray.count
     }
 
     // UIPickerViewに表示する配列
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return categoryList[row]
+        return categoryArray[row].categoryName
     }
     
     // UIPickerViewのRowが選択された時の挙動
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // 処理
-        selectedCategory = categoryList[row]
+        selectedCategory = categoryArray[row].categoryName
         print(" \(selectedCategory) が選択された。")
     }
     /*

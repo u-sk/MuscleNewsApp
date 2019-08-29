@@ -66,10 +66,11 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2S-Dq-Mp7">
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2S-Dq-Mp7">
                         <rect key="frame" x="26" y="441" width="234" height="33"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <state key="normal" title="コメント作成"/>
+                        <state key="normal" title="コメント作成" backgroundImage="salmonpink">
+                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZT1-4J-QSA">
                         <rect key="frame" x="26" y="478" width="234" height="20.5"/>
@@ -78,6 +79,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="nbV-01-Aeh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="3m8-jc-XxC"/>
                     <constraint firstAttribute="trailingMargin" secondItem="T2S-Dq-Mp7" secondAttribute="trailing" constant="10" id="AIq-gj-awB"/>
@@ -129,5 +131,6 @@
     </objects>
     <resources>
         <image name="like_none" width="32" height="32"/>
+        <image name="salmonpink" width="308" height="38"/>
     </resources>
 </document>

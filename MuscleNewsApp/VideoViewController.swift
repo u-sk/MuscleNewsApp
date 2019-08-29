@@ -34,6 +34,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         videoList.register(nib, forCellReuseIdentifier: "VideoCell")
         
         self.setupVideo()
+        
     }
     
     func setupVideo() {
@@ -73,9 +74,9 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
                 }
                 self.videos = videoDatas
                 self.videoList.reloadData()
+                SVProgressHUD.dismiss()
             }
         }
-        SVProgressHUD.dismiss()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
@@ -20,6 +21,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SVProgressHUD.show()
         
         navigationController?.hidesBarsOnTap = false
 
@@ -48,11 +50,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // テーブル行の高さの概算値を設定しておく
         // 高さ概算値 = 「縦横比1:1のUIImageViewの高さ(=画面幅)」+「いいねボタン、キャプションラベル、その他余白の高さの合計概算(=100pt)」
         tableView.estimatedRowHeight = UIScreen.main.bounds.width + 100
+        SVProgressHUD.dismiss()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("DEBUG_PRINT: viewWillAppear")
+        SVProgressHUD.show()
                 
         // ＊ログアウト画面から新たにユーザーを作った後、settingVCからpopToRootViewController()で戻ってくる
         // -- ここから --
@@ -133,6 +137,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 observing = false
             }
         }
+        SVProgressHUD.dismiss()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -213,35 +218,59 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     //  サーチバータップ時、検索結果を絞り込み表示(検索文字列が何もない場合の解消含む)
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        // キーボードを閉じる
-//        view.endEditing(true)
-//        
-//        db.collection("posts").whereField("category", isEqualTo: true)
-//            .getDocuments() { (querySnapshot, err) in
-//                if let err = err {
-//                    print("Error getting documents: \(err)")
-//                } else {
-//                    for document in querySnapshot!.documents {
-//                        print("\(document.documentID) => \(document.data())")
-//                    }
-//                }
-//        }
-
-        
-//        let ref = Database.database().reference().child("posts").queryOrdered(byChild: "category").queryStarting(atValue: searchBar.text!)
-//        print("refです：\(ref)")
-//        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-//            for item in snapshot.children {
-//                let snap = item as! DataSnapshot
-//                let dict = snap.value as! [String: Any]
-//                // データの中身
-//                print(dict)
-//                self.tableView.reloadData()
-//            }
-//        })
+        if let text = searchBar.text {
+            // サーチバーが空欄の場合
+            if text.isEmpty {
+                print("空欄です")
+                // キーボードを閉じる
+                view.endEditing(true)
+                
+                // 要素が追加されたらpostArrayに追加してTableViewを再表示する
+                let postsRef = Database.database().reference().child(Const.PostPath)
+                postsRef.observe(.childAdded, with: { snapshot in
+                    print("DEBUG_PRINT: .childAddedイベントが発生しました。")
+                    
+                    // PostDataクラスを生成して受け取ったデータを設定する
+                    if let uid = Auth.auth().currentUser?.uid {
+                        let postData = PostData(snapshot: snapshot, myId: uid)
+                        self.postArray.insert(postData, at: 0)
+                        
+                        // TableViewを再表示する
+                        self.tableView.reloadData()
+                    }
+                })
+                
+            } else {
+                print("検索する文字列：\(text)")
+                // キーボードを閉じる
+                view.endEditing(true)
+                // category部分で保存されているカテゴリーをsearchBarに入力したキーワードで検索する
+                let ref = Database.database().reference().child(Const.PostPath).queryOrdered(byChild: "category").queryEqual(toValue:searchBar.text!)
+                print("refです：\(ref)")
+                // まとめて取得する
+                ref.observeSingleEvent(of: .value, with: { (snapshot) in
+                    // 差し替えるため一度削除する
+                    self.postArray.removeAll()
+                            // まとめて取得したデータをfor文で分割する
+                            for item in snapshot.children {
+                            let snap = item as! DataSnapshot
+                                print("snapです：\(snap)")
+                                // 分割したSnapshot型のデータからPostData型のデータを作る
+                                if let uid = Auth.auth().currentUser?.uid {
+                                    let postData = PostData(snapshot: snap, myId: uid)
+                                     print("postDataです：\(postData)")
+                                    // 検索後のデータを挿入
+//                                    self.postArray.insert(postData, at: 0)
+                                    self.postArray.append(postData)
+                                    // 再表示
+                                    self.tableView.reloadData()
+                                }
+                        }
+                })
+            }
+        }
     }
 
-    
     /*
     // MARK: - Navigation
 

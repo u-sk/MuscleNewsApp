@@ -24,6 +24,14 @@ class SearchCollectionViewController: UICollectionViewController {
         self.collectionView!.register(UINib(nibName: "SearchCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+        
+        // レイアウト設定(全て余白無し/縦横同じ比率)
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: self.view.frame.width / 2, height: self.view.frame.width / 2)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        collectionView.collectionViewLayout = layout
     }
 
     /*

@@ -45,14 +45,14 @@ class ViewController: UIViewController {
         
         // タブをタップした時に表示するViewControllerを設定する
         let navigationController = storyboard?.instantiateViewController(withIdentifier: "Nav")
-        let videoViewController = storyboard?.instantiateViewController(withIdentifier: "Video")
-        let searchCollectionViewController = storyboard?.instantiateViewController(withIdentifier: "Search")
-        let mapViewController = storyboard?.instantiateViewController(withIdentifier: "Map")
+        let videoNavigationController = storyboard?.instantiateViewController(withIdentifier: "VideoNav")
+        let searchNavigationController = storyboard?.instantiateViewController(withIdentifier: "SearchNav")
+        let mapNavigationController = storyboard?.instantiateViewController(withIdentifier: "MapNav")
 
         tabBarController.setView(navigationController, at: 0)
-        tabBarController.setView(videoViewController, at: 1)
-        tabBarController.setView(searchCollectionViewController, at: 3)
-        tabBarController.setView(mapViewController, at: 4)
+        tabBarController.setView(videoNavigationController , at: 1)
+        tabBarController.setView(searchNavigationController, at: 3)
+        tabBarController.setView(mapNavigationController, at: 4)
         
         // 真ん中のタブはボタンとして扱う
         tabBarController.highlightButton(at: 2)

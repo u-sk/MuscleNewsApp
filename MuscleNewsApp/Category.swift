@@ -15,6 +15,9 @@ class Category: Object {
     // カテゴリー
     @objc dynamic var categoryName = ""
     
+//    // 選択されたカテゴリー
+//    @objc dynamic var  selectedCategory = ""
+    
     /**
      id をプライマリーキーとして設定
      */
