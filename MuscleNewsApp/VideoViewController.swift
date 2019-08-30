@@ -33,13 +33,20 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         let nib = UINib(nibName: "VideoTableViewCell", bundle: nil)
         videoList.register(nib, forCellReuseIdentifier: "VideoCell")
         
-        self.setupVideo()
+       
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+         self.setupVideo()
+    }
+
+    
+    
     func setupVideo() {
             SVProgressHUD.show()
-        Alamofire.request("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&order=date&q=%E7%AD%8B%E3%83%88%E3%83%AC%0D%0A&type=video&key=APIキー").responseJSON { response in
+        Alamofire.request("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=date&q=%E7%AD%8B%E3%83%88%E3%83%AC%0D%0A&type=video&key=APIキー").responseJSON { response in
             // 通信結果のJSON (ここまでがAlamofire)
             if let jsonObject = response.result.value {
                 // 使いやすいJSONにしてくれる(ここからSwiftyJSON)

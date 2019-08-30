@@ -22,9 +22,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupLocationManager()
-        
-       
+       setupLocationManager()
     }
     
     func makeMap() {
@@ -42,7 +40,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         //        marker.map = mapView
         
         // HTTP通信
-        Alamofire.request("https://map.yahooapis.jp/search/local/V1/localSearch?cid=d8a23e9e64a4c817227ab09858bc1330&lat=\(latitude)&lon=\( longitude)&dist=2&query=%E3%82%B8%E3%83%A0%0D%0A%0D%0A%0D%0A&appid=APIキー&output=json").responseJSON { response in
+        Alamofire.request("https://map.yahooapis.jp/search/local/V1/localSearch?cid=d8a23e9e64a4c817227ab09858bc1330&lat=\(latitude)&lon=\( longitude)&dist=3&query=%E3%82%B8%E3%83%A0%0D%0A%0D%0A%0D%0A&appid=APIキー&output=json").responseJSON { response in
             // リクエスト
             //                        print("Request: \(String(describing: response.request))")
             // レスポンス

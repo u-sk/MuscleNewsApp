@@ -15,7 +15,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
-    @IBOutlet weak var urlLabel: UILabel!
+//    @IBOutlet weak var urlLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     
     @IBOutlet weak var makeCommentButton: UIButton!
@@ -46,7 +46,6 @@ class PostTableViewCell: UITableViewCell {
         self.dateLabel.text = dateString
         
         self.categoryLabel.text = "カテゴリー : \(postData.category!)"
-        self.urlLabel.text = "URL : \(postData.url!)"
         
         // コメント作成者・コメント追加
         var setComment: String = ""

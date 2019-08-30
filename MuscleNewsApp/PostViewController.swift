@@ -36,8 +36,6 @@ class PostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     // カテゴリー作成ボタンをタップしたときに呼ばれるメソッド
     @IBAction func makeCategoryButton(_ sender: Any) {
     }
-    @IBOutlet weak var urlLabel: UILabel!
-    @IBOutlet weak var urlTextField: UITextField!
     
     // 投稿ボタンをタップしたときに呼ばれるメソッド
     @IBAction func handlePostButton(_ sender: Any) {
@@ -51,7 +49,7 @@ class PostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         // 辞書を作成してFirebaseに保存する
         let postRef = Database.database().reference().child(Const.PostPath)
-        let postDic = ["caption": captionTextField.text!, "category": selectedCategory, "url": urlTextField.text!, "image": imageString, "time": String(time), "name": name!]
+        let postDic = ["caption": captionTextField.text!, "category": selectedCategory, "image": imageString, "time": String(time), "name": name!]
         postRef.childByAutoId().setValue(postDic)
         // HUDで投稿完了を表示する
         SVProgressHUD.showSuccess(withStatus: "投稿しました")
@@ -123,7 +121,6 @@ class PostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     // TextField以外をタップして閉じる
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         captionTextField.resignFirstResponder()
-        urlTextField.resignFirstResponder()
     }
     
     override func viewDidLoad() {
