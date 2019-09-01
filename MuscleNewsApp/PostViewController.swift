@@ -49,7 +49,7 @@ class PostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         // 辞書を作成してFirebaseに保存する
         let postRef = Database.database().reference().child(Const.PostPath)
-        let postDic = ["caption": captionTextField.text!, "category": selectedCategory, "image": imageString, "time": String(time), "name": name!]
+        let postDic = ["caption": captionTextField.text!, "category": selectedCategory, "image": imageString, "time": String(time), "name": name!, "userId": Auth.auth().currentUser?.uid]
         postRef.childByAutoId().setValue(postDic)
         // HUDで投稿完了を表示する
         SVProgressHUD.showSuccess(withStatus: "投稿しました")

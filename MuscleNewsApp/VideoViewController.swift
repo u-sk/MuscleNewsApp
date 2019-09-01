@@ -51,17 +51,14 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
             if let jsonObject = response.result.value {
                 // 使いやすいJSONにしてくれる(ここからSwiftyJSON)
                 let json = JSON(jsonObject)
-                // Stringで取る
+                // "items"を取得
                 let Items = json["items"]
                 
                 var videoDatas: [Video] = []
                 // Featureは10個の配列なのでループを回して取る
                 // 第一引数のkeyは使わないので、_にする
                 for (_ ,subJson):(String, JSON) in Items {
-//                    print("タイトル：\(subJson["snippet"]["title"])")
-//                    print("チャンネル名：\(subJson["snippet"]["channelTitle"])")
-//                    print("キャプション：\(subJson["snippet"]["description"])")
-//                    print("サムネ：\(subJson["snippet"]["thumbnails"]["medium"]["url"])")
+
                     print("投稿日時：\(subJson["snippet"]["publishedAt"])")
                     print("ビデオID：\(subJson["id"]["videoId"])")
                     

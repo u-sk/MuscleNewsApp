@@ -21,6 +21,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         navigationController?.hidesBarsOnTap = false
 
@@ -32,8 +33,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // サーチバー初期設定
         searchBar.delegate = self
         searchBar.placeholder = "カテゴリーを入力してください"
-//        searchBar.scopeButtonTitles  = ["パグ", "フレンチブルドッグ"]
-//        searchBar.showsScopeBar = true
         
         // テーブルセルのタップを無効にする
         tableView.allowsSelection = false
@@ -49,7 +48,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // テーブル行の高さの概算値を設定しておく
         // 高さ概算値 = 「縦横比1:1のUIImageViewの高さ(=画面幅)」+「いいねボタン、キャプションラベル、その他余白の高さの合計概算(=100pt)」
         tableView.estimatedRowHeight = UIScreen.main.bounds.width + 100
- 
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -157,39 +155,34 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // セルが削除が可能なことを伝えるメソッド
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .delete
+        // 選択箇所のデータ一覧
+        let postData = postArray[indexPath.row]
+        // ログインユーザーIDと投稿ユーザーIDが一致する場合は「.delete」を返す
+        if postData.userId == Auth.auth().currentUser?.uid {
+            return .delete
+        } else {
+            // 一致しない場合は「.none」を返す
+            return .none
+        }
     }
-
     // Delete ボタンが押された時に呼ばれるメソッド
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            
             // 選択箇所のデータ一覧
             let postData = postArray[indexPath.row]
-            // ログインしているユーザー名
-            let user = Auth.auth().currentUser?.displayName
-           // 投稿しているユーザー名
-            let postUser = postData.name
-            
             // 選択した投稿を削除する
-            // ログインユーザーと投稿者が同じ場合
-            if user == postUser {
-                // 選択した投稿のデータの場所(Firebase上)
-                let postRef = Database.database().reference().child(Const.PostPath).child(postData.id!)
-                // 選択した投稿のデータの場所から削除(Firebase上)
-                postRef.removeValue()
-                // 選択した投稿のデータの配列
-                self.postArray.remove(at: indexPath.row)
-                // 選択した投稿のデータの配列をテーブルビュー上から削除
-                tableView.deleteRows(at: [indexPath], with: .fade)
-                // HUDで削除完了を表示する
-                SVProgressHUD.showSuccess(withStatus: "削除しました")
-            } else {
-                // ログインユーザーと投稿者が違う場合
-                // HUDで削除不可を表示する
-                SVProgressHUD.showSuccess(withStatus: "その他のユーザーの投稿は削除できません")
-                return
-            }
+            // 選択した投稿のデータの場所(Firebase上)
+            let postRef = Database.database().reference().child(Const.PostPath).child(postData.id!)
+            // 選択した投稿のデータの場所から削除(Firebase上)
+            postRef.removeValue()
+            // 選択した投稿のデータの配列
+            self.postArray.remove(at: indexPath.row)
+            // 選択した投稿のデータの配列をテーブルビュー上から削除
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            // HUDで削除完了を表示する
+            SVProgressHUD.showSuccess(withStatus: "削除しました")
+        } else {
+            return
         }
     }
     

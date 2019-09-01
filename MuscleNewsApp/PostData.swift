@@ -21,6 +21,7 @@ class PostData: NSObject {
     var isLiked: Bool = false
     var comment: [String] = []
     var poster: [String] = []
+    var userId: String?
     
     init(snapshot: DataSnapshot, myId: String) {
         self.id = snapshot.key
@@ -35,6 +36,8 @@ class PostData: NSObject {
         self.caption = valueDictionary["caption"] as? String
         
         self.category = valueDictionary["category"] as? String
+        
+        self.userId = valueDictionary["userId"] as? String
         
         let time = valueDictionary["time"] as? String
         self.date = Date(timeIntervalSinceReferenceDate: TimeInterval(time!)!)

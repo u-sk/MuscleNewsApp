@@ -74,7 +74,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                     let latDouble = Double(lat)
                     let lonDouble = Double(lon)
                     
-                    // マーカーを作る
+                    // 現在地でマーカーを作る
                     let marker = GMSMarker()
                     marker.position = CLLocationCoordinate2D(latitude: latDouble!, longitude: lonDouble!)
                     marker.title = name

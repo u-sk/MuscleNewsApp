@@ -102,7 +102,7 @@ class SearchCollectionViewController: UICollectionViewController {
             cell.tapCellButton.setBackgroundImage(image, for: .normal)
             break
         case 9:
-            let image = UIImage(named: "supplement")
+            let image = UIImage(named: "horse")
             cell.tapCellButton.setBackgroundImage(image, for: .normal)
             break
         default:

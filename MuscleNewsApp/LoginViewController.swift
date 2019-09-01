@@ -90,14 +90,14 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // 角丸設定
-        self.loginButton.layer.cornerRadius = 12
+//        self.loginButton.layer.cornerRadius = 12
         // 背景色
-        self.loginButton.backgroundColor = UIColor(red: 250/255, green: 128/255, blue: 114/255, alpha: 1)
+//        self.loginButton.backgroundColor = UIColor(red: 250/255, green: 128/255, blue: 114/255, alpha: 1)
         // 影の設定
-        self.loginButton.layer.shadowOpacity = 0.5
-        self.loginButton.layer.shadowRadius = 12
-        self.loginButton.layer.shadowColor = UIColor.black.cgColor
-        self.loginButton.layer.shadowOffset = CGSize(width: 5, height: 5)
+//        self.loginButton.layer.shadowOpacity = 0.5
+//        self.loginButton.layer.shadowRadius = 12
+//        self.loginButton.layer.shadowColor = UIColor.black.cgColor
+//        self.loginButton.layer.shadowOffset = CGSize(width: 5, height: 5)
         // Do any additional setup after loading the view.
     }
     
