@@ -28,17 +28,18 @@ http通信
 　- ESTabBarController  
 通知  
 　- SVProgressHUD  
+GoogleMap
+　- GoogleMapsSDK
 
-＜WebAPI関連＞  
-　- GoogleMaps  
-　- Yahoo!ローカルサーチAPI  
-　- YouTube Data API  
-＜ログイン機能/データ管理＞  
-  - Firebase  
-＜データ管理＞  
-　- Realm  
-＜設計図作成＞  
-　- Cacoo  
+<WebAPI関連>  
+　- Yahoo!ローカルサーチAPI   
+　- YouTube Data API   
+<ログイン機能/データ管理>  
+　- Firebase   
+<データ管理>  
+　- Realm    
+<設計図作成>  
+　- Cacoo   
 ＜デザイン作成＞  
 　- Sktech  
 
