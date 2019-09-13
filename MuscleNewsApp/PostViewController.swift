@@ -82,7 +82,7 @@ class PostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     // カテゴリ削除ボタンを押した時
     @IBAction func deleteCategoryButton(_ sender: Any) {
         // ポップアップを追加する
-        let alertController = UIAlertController(title: "選択したカテゴリーを削除しますか？", message: nil, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "選択したカテゴリーを削除しますか？", message: "メッセージ", preferredStyle: .actionSheet)
         let action:UIAlertAction = UIAlertAction(title: "削除", style: .default) { (void) in
             
             if self.pickerView.selectedRow(inComponent: 0) > 2 {
@@ -100,8 +100,12 @@ class PostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             // HUDで削除を表示する
             SVProgressHUD.showSuccess(withStatus: "カテゴリーが削除されました")
         }
+        let action1:UIAlertAction = UIAlertAction(title: "action1", style: .destructive, handler: nil)
+        let action2:UIAlertAction = UIAlertAction(title: "action2", style: .destructive, handler: nil)
         let cancel:UIAlertAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
         alertController.addAction(action)
+        alertController.addAction(action1)
+        alertController.addAction(action2)
         alertController.addAction(cancel)
         present(alertController, animated: true, completion: nil)
     }
@@ -137,7 +141,7 @@ class PostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         // 追加するデータを用意(初期値)
         let categoryData1 = Category()
         categoryData1.id = 1
-        categoryData1.categoryName = "AAA"
+        categoryData1.categoryName = "プロテイン"
         // データを追加
         try! realm.write() {
             realm.add(categoryData1, update: true)
@@ -145,7 +149,7 @@ class PostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         let categoryData2 = Category()
         categoryData2.id = 2
-        categoryData2.categoryName = "BBB"
+        categoryData2.categoryName = "サプリメント"
         // データを追加
         try! realm.write() {
             realm.add(categoryData2, update: true)
@@ -153,7 +157,7 @@ class PostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         let categoryData3 = Category()
         categoryData3.id = 3
-        categoryData3.categoryName = "CCC"
+        categoryData3.categoryName = "鶏肉"
         // データを追加
         try! realm.write() {
             realm.add(categoryData3, update: true)
