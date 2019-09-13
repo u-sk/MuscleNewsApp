@@ -12,6 +12,12 @@
 		0265147C230E9BCD0075D139 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0265147B230E9BCD0075D139 /* Video.swift */; };
 		02711958231FB2CB001636F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02711957231FB2CB001636F8 /* GoogleService-Info.plist */; };
 		02770A382312964C00D0C40B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02770A372312964C00D0C40B /* Category.swift */; };
+		0282C6E8232B923600FCA38D /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0282C6E7232B923600FCA38D /* IntroViewController.swift */; };
+		0282C6EE232B991E00FCA38D /* 1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0282C6E9232B991D00FCA38D /* 1.json */; };
+		0282C6EF232B991E00FCA38D /* 2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0282C6EA232B991D00FCA38D /* 2.json */; };
+		0282C6F0232B991E00FCA38D /* 4.json in Resources */ = {isa = PBXBuildFile; fileRef = 0282C6EB232B991D00FCA38D /* 4.json */; };
+		0282C6F4232BA3D800FCA38D /* 3.json in Resources */ = {isa = PBXBuildFile; fileRef = 0282C6F3232BA3D700FCA38D /* 3.json */; };
+		0282C6F6232BA3DD00FCA38D /* 5.json in Resources */ = {isa = PBXBuildFile; fileRef = 0282C6F5232BA3DD00FCA38D /* 5.json */; };
 		02A1A4A4230CFB8C0086D2A2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A1A4A3230CFB8C0086D2A2 /* MapViewController.swift */; };
 		02EC02F3230B89D0009B45F2 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC02F2230B89D0009B45F2 /* Const.swift */; };
 		02EC02F5230B9024009B45F2 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC02F4230B9024009B45F2 /* PostData.swift */; };
@@ -42,6 +48,12 @@
 		0265147B230E9BCD0075D139 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		02711957231FB2CB001636F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		02770A372312964C00D0C40B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		0282C6E7232B923600FCA38D /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		0282C6E9232B991D00FCA38D /* 1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 1.json; sourceTree = SOURCE_ROOT; };
+		0282C6EA232B991D00FCA38D /* 2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 2.json; sourceTree = SOURCE_ROOT; };
+		0282C6EB232B991D00FCA38D /* 4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 4.json; sourceTree = SOURCE_ROOT; };
+		0282C6F3232BA3D700FCA38D /* 3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 3.json; sourceTree = "<group>"; };
+		0282C6F5232BA3DD00FCA38D /* 5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 5.json; sourceTree = "<group>"; };
 		02A1A4A3230CFB8C0086D2A2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		02EC02F2230B89D0009B45F2 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		02EC02F4230B9024009B45F2 /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
@@ -82,6 +94,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0282C6E1232B90A800FCA38D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				02EC02F4230B9024009B45F2 /* PostData.swift */,
+				0265147B230E9BCD0075D139 /* Video.swift */,
+				02EC02F2230B89D0009B45F2 /* Const.swift */,
+				02770A372312964C00D0C40B /* Category.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0282C6E3232B90D600FCA38D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				02FC1BC6230A3FF500D7E961 /* AppDelegate.swift */,
+				02FC1BC8230A3FF500D7E961 /* ViewController.swift */,
+				02FC1BDA230A409800D7E961 /* LoginViewController.swift */,
+				02FC1BDC230A418A00D7E961 /* HomeViewController.swift */,
+				02FC1BDF230A41AC00D7E961 /* ImageSelectViewController.swift */,
+				02FC1BE1230A41CF00D7E961 /* PostViewController.swift */,
+				02FC1BE3230A41DE00D7E961 /* SettingViewController.swift */,
+				02FC1BE5230A41FB00D7E961 /* CommentViewController.swift */,
+				02FC1BE7230A420F00D7E961 /* MakeCategoryViewController.swift */,
+				02EC02F6230B9284009B45F2 /* PostTableViewCell.swift */,
+				02EC02F7230B9284009B45F2 /* PostTableViewCell.xib */,
+				02A1A4A3230CFB8C0086D2A2 /* MapViewController.swift */,
+				02F6906F230D538B00CB70CE /* SearchCollectionViewController.swift */,
+				02F69071230D57CA00CB70CE /* SearchCollectionViewCell.swift */,
+				02F69072230D57CA00CB70CE /* SearchCollectionViewCell.xib */,
+				02FC1BED230A426300D7E961 /* VideoViewController.swift */,
+				02651477230E993E0075D139 /* VideoTableViewCell.swift */,
+				02651478230E993E0075D139 /* VideoTableViewCell.xib */,
+				0282C6E7232B923600FCA38D /* IntroViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0282C6E4232B910700FCA38D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				02FC1BCA230A3FF500D7E961 /* Main.storyboard */,
+				02FC1BCD230A3FF600D7E961 /* Assets.xcassets */,
+				02FC1BCF230A3FF600D7E961 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		02FC1BBA230A3FF500D7E961 = {
 			isa = PBXGroup;
 			children = (
@@ -103,33 +162,16 @@
 		02FC1BC5230A3FF500D7E961 /* MuscleNewsApp */ = {
 			isa = PBXGroup;
 			children = (
-				02EC02F2230B89D0009B45F2 /* Const.swift */,
-				02EC02F4230B9024009B45F2 /* PostData.swift */,
-				02FC1BC6230A3FF500D7E961 /* AppDelegate.swift */,
-				02FC1BC8230A3FF500D7E961 /* ViewController.swift */,
-				02FC1BCA230A3FF500D7E961 /* Main.storyboard */,
-				02FC1BCD230A3FF600D7E961 /* Assets.xcassets */,
-				02FC1BCF230A3FF600D7E961 /* LaunchScreen.storyboard */,
+				0282C6E1232B90A800FCA38D /* Model */,
+				0282C6E4232B910700FCA38D /* View */,
+				0282C6E3232B90D600FCA38D /* Controller */,
 				02FC1BD2230A3FF600D7E961 /* Info.plist */,
 				02711957231FB2CB001636F8 /* GoogleService-Info.plist */,
-				02FC1BDA230A409800D7E961 /* LoginViewController.swift */,
-				02FC1BDC230A418A00D7E961 /* HomeViewController.swift */,
-				02FC1BDF230A41AC00D7E961 /* ImageSelectViewController.swift */,
-				02FC1BE1230A41CF00D7E961 /* PostViewController.swift */,
-				02FC1BE3230A41DE00D7E961 /* SettingViewController.swift */,
-				02FC1BE5230A41FB00D7E961 /* CommentViewController.swift */,
-				02FC1BE7230A420F00D7E961 /* MakeCategoryViewController.swift */,
-				02EC02F6230B9284009B45F2 /* PostTableViewCell.swift */,
-				02EC02F7230B9284009B45F2 /* PostTableViewCell.xib */,
-				02A1A4A3230CFB8C0086D2A2 /* MapViewController.swift */,
-				02F6906F230D538B00CB70CE /* SearchCollectionViewController.swift */,
-				02F69071230D57CA00CB70CE /* SearchCollectionViewCell.swift */,
-				02F69072230D57CA00CB70CE /* SearchCollectionViewCell.xib */,
-				02FC1BED230A426300D7E961 /* VideoViewController.swift */,
-				02651477230E993E0075D139 /* VideoTableViewCell.swift */,
-				02651478230E993E0075D139 /* VideoTableViewCell.xib */,
-				0265147B230E9BCD0075D139 /* Video.swift */,
-				02770A372312964C00D0C40B /* Category.swift */,
+				0282C6E9232B991D00FCA38D /* 1.json */,
+				0282C6EA232B991D00FCA38D /* 2.json */,
+				0282C6F3232BA3D700FCA38D /* 3.json */,
+				0282C6EB232B991D00FCA38D /* 4.json */,
+				0282C6F5232BA3DD00FCA38D /* 5.json */,
 			);
 			path = MuscleNewsApp;
 			sourceTree = "<group>";
@@ -214,11 +256,16 @@
 			files = (
 				0265147A230E993E0075D139 /* VideoTableViewCell.xib in Resources */,
 				02F69074230D57CA00CB70CE /* SearchCollectionViewCell.xib in Resources */,
+				0282C6F4232BA3D800FCA38D /* 3.json in Resources */,
+				0282C6EF232B991E00FCA38D /* 2.json in Resources */,
 				02FC1BD1230A3FF600D7E961 /* LaunchScreen.storyboard in Resources */,
 				02FC1BCE230A3FF600D7E961 /* Assets.xcassets in Resources */,
+				0282C6F0232B991E00FCA38D /* 4.json in Resources */,
 				02EC02F9230B9284009B45F2 /* PostTableViewCell.xib in Resources */,
 				02FC1BCC230A3FF500D7E961 /* Main.storyboard in Resources */,
 				02711958231FB2CB001636F8 /* GoogleService-Info.plist in Resources */,
+				0282C6EE232B991E00FCA38D /* 1.json in Resources */,
+				0282C6F6232BA3DD00FCA38D /* 5.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +350,7 @@
 				02F69073230D57CA00CB70CE /* SearchCollectionViewCell.swift in Sources */,
 				02FC1BE4230A41DE00D7E961 /* SettingViewController.swift in Sources */,
 				0265147C230E9BCD0075D139 /* Video.swift in Sources */,
+				0282C6E8232B923600FCA38D /* IntroViewController.swift in Sources */,
 				02FC1BDD230A418A00D7E961 /* HomeViewController.swift in Sources */,
 				02EC02F3230B89D0009B45F2 /* Const.swift in Sources */,
 				02A1A4A4230CFB8C0086D2A2 /* MapViewController.swift in Sources */,

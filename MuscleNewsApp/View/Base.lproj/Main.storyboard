@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8rx-VB-tkj">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,43 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Intro View Controller-->
+        <scene sceneID="HYZ-ZU-NKP">
+            <objects>
+                <viewController id="8rx-VB-tkj" customClass="IntroViewController" customModule="MuscleNewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IpQ-FN-LOs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mwh-Yf-8tk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7T-D5-msp">
+                                <rect key="frame" x="20" y="54" width="335" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="ログイン画面へ"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="feE-wF-VPP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Z7T-D5-msp" firstAttribute="top" secondItem="8au-IW-bbr" secondAttribute="top" constant="10" id="LGH-XD-E5s"/>
+                            <constraint firstItem="8au-IW-bbr" firstAttribute="trailing" secondItem="Z7T-D5-msp" secondAttribute="trailing" constant="20" id="htj-qp-LmZ"/>
+                            <constraint firstItem="Z7T-D5-msp" firstAttribute="leading" secondItem="8au-IW-bbr" secondAttribute="leading" constant="20" id="mTE-lS-hPw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8au-IW-bbr"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="mwh-Yf-8tk" id="nrb-n2-69Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aLL-Jy-xfF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1756" y="-425.61576354679806"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>

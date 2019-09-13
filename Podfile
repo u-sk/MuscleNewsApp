@@ -20,4 +20,5 @@ target 'MuscleNewsApp' do
   pod 'Alamofire', '4.8.2'
   pod 'SwiftyJSON'
   pod 'RealmSwift', '3.15.0'
+  pod 'lottie-ios'
 end
