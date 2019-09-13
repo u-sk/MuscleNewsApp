@@ -28,8 +28,10 @@ http通信
 　- ESTabBarController  
 通知  
 　- SVProgressHUD  
-GoogleMap
-　- GoogleMapsSDK
+GoogleMap  
+　- GoogleMapsSDK 
+アニメーション 
+　- Lottie  
 
 <WebAPI関連>  
 　- Yahoo!ローカルサーチAPI   
