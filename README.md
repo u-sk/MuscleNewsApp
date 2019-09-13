@@ -3,11 +3,16 @@
 ◆アプリ名  
 マチョにゅー/MuscleNewsApp  
 トレーニングするユーザー(自分)が気になる事だけを簡単に検索できる機能を  
-集めたアプリになります。また、好きなプロテインなども写真投稿可能です。  
+集めたアプリになります。また、好きなプロテインなども写真投稿可能です。 
+
+![アイコン](icon2.png)
 
 ◆テストアカウント:  
 [email] test@test.com  
 [password] test0000  
+
+◆設計図
+![設計図](plan.png)
 
 ◆使用した技術  
 <ライブラリについて>  
@@ -23,17 +28,18 @@ http通信
 　- ESTabBarController  
 通知  
 　- SVProgressHUD  
+GoogleMap
+　- GoogleMapsSDK
 
-＜WebAPI関連＞  
-　- GoogleMaps  
-　- Yahoo!ローカルサーチAPI  
-　- YouTube Data API  
-＜ログイン機能/データ管理＞  
-  - Firebase  
-＜データ管理＞  
-　- Realm  
-＜設計図作成＞  
-　- Cacoo  
+<WebAPI関連>  
+　- Yahoo!ローカルサーチAPI   
+　- YouTube Data API   
+<ログイン機能/データ管理>  
+　- Firebase   
+<データ管理>  
+　- Realm    
+<設計図作成>  
+　- Cacoo   
 ＜デザイン作成＞  
 　- Sktech  
 
@@ -45,5 +51,4 @@ http通信
 ・Youtubeの最新筋トレ動画を検索  
 ・キーワード検索でGoogleのニュースページに遷移  
 ・現在地の近くにあるジムの地図上にピンを立てる  
-
 
