@@ -11,6 +11,9 @@ import Alamofire
 import SwiftyJSON
 import SVProgressHUD
 import AVFoundation
+import RealmSwift
+
+
 
 class VideoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     @IBOutlet weak var videoList: UITableView!
@@ -21,6 +24,17 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     var videoID:String = ""
      // URLを入れる配列
     var videoIDArray = [String ]()
+
+    // お気に入り動画の配列
+    var favoriteVideos:[Video] = []
+    
+    // Realmインスタンスを取得
+    let realm = try! Realm()
+    // favoriteを定義
+    var favorite = Favorite()
+    
+    // 以降内容をアップデートするとリスト内は自動的に更新される。
+    var favoriteVideoArray = try! Realm().objects(Favorite.self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,8 +74,13 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
                     print("投稿日時：\(subJson["snippet"]["publishedAt"])")
                     print("ビデオID：\(subJson["id"]["videoId"])")
                     
-                    let imageUrl:String = subJson["snippet"]["thumbnails"]["medium"]["url"].string!
-                    let image: UIImage? = UIImage(data: NSData(contentsOf: NSURL(string: imageUrl)! as URL)! as Data)
+                    // 動画データを作成する
+                    guard let imageURLString = subJson["snippet"]["thumbnails"]["medium"]["url"].string,
+                        let imageURL = URL(string: imageURLString) ,
+                        let imageData = NSData(contentsOf: imageURL) as Data? else {
+                            continue
+                    }
+                    let image: UIImage? = UIImage(data: imageData)
 
                     // 動画再生のためのURL完成および配列に格納
                     self.videoID = "https://www.youtube.com/watch?v=" + subJson["id"]["videoId"].string!
@@ -88,12 +107,16 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell", for: indexPath) as! VideoTableViewCell
         cell.setCell(videos[indexPath.row])
-        // セル内のボタンのアクションをソースコードで設定する
+        // セル内のボタン(動画)のアクションをソースコードで設定する
         cell.tapVideoButton.addTarget(self, action:#selector(tapVideoButton(_:forEvent:)), for: .touchUpInside)
+        
+        // セル内のボタン(お気に入り)のアクションをソースコードで設定する
+        cell.tapFavoriteBUtton.addTarget(self, action:#selector(tapFavoriteBUtton(_:forEvent:)), for: .touchUpInside)
+        
         return cell
     }
     
-    // セル内のボタンがタップされた時に呼ばれるメソッド
+    // セル内のボタン(動画)がタップされた時に呼ばれるメソッド
     @objc func tapVideoButton(_ sender: UIButton, forEvent event: UIEvent) {
         print("DEBUG_PRINT: 動画ボタンがタップされました")
         // タップされたセルのインデックスを求める
@@ -108,5 +131,50 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
             UIApplication.shared.open(url)
         }
     }
+    
+    // セル内のボタン(お気に入り)がタップされた時に呼ばれるメソッド
+    @objc func tapFavoriteBUtton(_ sender: UIButton, forEvent event: UIEvent) {
+        print("DEBUG_PRINT: 動画ボタンがタップされました")
+        // タップされたセルのインデックスを求める
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.videoList)
+        let indexPath = videoList.indexPathForRow(at: point)
+        
+        // 選択されたお気に入り動画
+        let favoriteVideo = videos[indexPath!.row]
+        favoriteVideos.append(favoriteVideo)
+        SVProgressHUD.showSuccess(withStatus: "お気に入りに追加しました")
 
+//        print("タイトルです：\(favoriteVideos[indexPath!.row].title)")
+//        print("チャンネル名です：\(favoriteVideos[indexPath!.row].name)")
+//        print("サムネイルです：\(favoriteVideos[indexPath!.row].image)")
+//        print("動画URLです：\(favoriteVideos[indexPath!.row].videoid)")
+        
+        // Realmを使って保持する
+        try! realm.write {
+            // お気に入り動画を追加(Realm)
+            self.favorite.title = favoriteVideos[indexPath!.row].title
+            self.favorite.name = favoriteVideos[indexPath!.row].name
+            self.favorite.image = favoriteVideos[indexPath!.row].image.pngData()!
+            self.favorite.videoid = favoriteVideos[indexPath!.row].videoid
+            self.realm.add(self.favorite, update: true)
+            // Realmデータベースファイルまでのパスを表示
+            print(Realm.Configuration.defaultConfiguration.fileURL!)
+        }
+        
+        let favoriteVideoVC = storyboard?.instantiateViewController(withIdentifier: "Favorite") as! FavoriteVideoViewController
+        // 値を渡す
+        favoriteVideoVC.favoriteVideos = favoriteVideos
+        
+    }
+
+    @IBAction func toFavoriteVC(_ sender: Any) {
+        print("選択されたお気に入り動画の配列：\(favoriteVideos)")
+        let favoriteVideoVC = storyboard?.instantiateViewController(withIdentifier: "Favorite") as! FavoriteVideoViewController
+        // 値を渡す
+        favoriteVideoVC.favoriteVideos = favoriteVideos
+        navigationController?.pushViewController(favoriteVideoVC, animated: true)
+    }
+    
+    
 }

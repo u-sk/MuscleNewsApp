@@ -182,6 +182,11 @@
                         <viewLayoutGuide key="safeArea" id="Zfl-7y-3Tp"/>
                     </view>
                     <navigationItem key="navigationItem" title="筋トレYoutube" id="FA4-0p-hph">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="star" id="D4P-aI-ySo">
+                            <connections>
+                                <action selector="toFavoriteVC:" destination="iq5-8n-2rq" id="chU-3G-lSA"/>
+                            </connections>
+                        </barButtonItem>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
                                 <color key="value" red="1" green="1" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
@@ -195,6 +200,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Op3-EB-fgK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4951.1999999999998" y="884.48275862068965"/>
+        </scene>
+        <!--Favorite Video View Controller-->
+        <scene sceneID="Nfe-I8-Uii">
+            <objects>
+                <viewController storyboardIdentifier="Favorite" id="gvF-9J-xhj" customClass="FavoriteVideoViewController" customModule="MuscleNewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XuD-1P-q5y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="laE-0t-oFX">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="laE-0t-oFX" firstAttribute="leading" secondItem="bBs-P7-ped" secondAttribute="leading" id="3SB-KP-UlS"/>
+                            <constraint firstItem="laE-0t-oFX" firstAttribute="trailing" secondItem="bBs-P7-ped" secondAttribute="trailing" id="8jd-M4-17b"/>
+                            <constraint firstItem="laE-0t-oFX" firstAttribute="bottom" secondItem="bBs-P7-ped" secondAttribute="bottom" id="KkG-oF-rQ0"/>
+                            <constraint firstItem="laE-0t-oFX" firstAttribute="top" secondItem="bBs-P7-ped" secondAttribute="top" id="gT2-3H-f8j"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bBs-P7-ped"/>
+                    </view>
+                    <connections>
+                        <outlet property="favoriteVideoTableView" destination="laE-0t-oFX" id="pmB-RJ-g3q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DVo-rR-cPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5596" y="883.74384236453204"/>
         </scene>
         <!--写真選択画面-->
         <scene sceneID="kTh-oH-fai">
@@ -709,7 +744,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kpl-tG-GyB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4042.4000000000001" y="884.48275862068965"/>
+            <point key="canvasLocation" x="4278" y="893"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BDX-gi-6b4">
@@ -770,5 +805,6 @@
         <image name="blue" width="102.66666412353516" height="12.666666984558105"/>
         <image name="gray" width="102.66666412353516" height="12.666666984558105"/>
         <image name="pink" width="102.66666412353516" height="12.666666984558105"/>
+        <image name="star" width="32" height="32"/>
     </resources>
 </document>

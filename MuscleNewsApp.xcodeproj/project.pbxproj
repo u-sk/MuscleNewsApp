@@ -18,6 +18,10 @@
 		0282C6F0232B991E00FCA38D /* 4.json in Resources */ = {isa = PBXBuildFile; fileRef = 0282C6EB232B991D00FCA38D /* 4.json */; };
 		0282C6F4232BA3D800FCA38D /* 3.json in Resources */ = {isa = PBXBuildFile; fileRef = 0282C6F3232BA3D700FCA38D /* 3.json */; };
 		0282C6F6232BA3DD00FCA38D /* 5.json in Resources */ = {isa = PBXBuildFile; fileRef = 0282C6F5232BA3DD00FCA38D /* 5.json */; };
+		0282C6F8232C8CA100FCA38D /* FavoriteVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0282C6F7232C8CA100FCA38D /* FavoriteVideoViewController.swift */; };
+		0282C6FD232CA43600FCA38D /* FavoriteVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0282C6FB232CA43600FCA38D /* FavoriteVideoTableViewCell.swift */; };
+		0282C6FE232CA43600FCA38D /* FavoriteVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0282C6FC232CA43600FCA38D /* FavoriteVideoTableViewCell.xib */; };
+		0282C700232D028000FCA38D /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0282C6FF232D028000FCA38D /* Favorite.swift */; };
 		02A1A4A4230CFB8C0086D2A2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A1A4A3230CFB8C0086D2A2 /* MapViewController.swift */; };
 		02EC02F3230B89D0009B45F2 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC02F2230B89D0009B45F2 /* Const.swift */; };
 		02EC02F5230B9024009B45F2 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC02F4230B9024009B45F2 /* PostData.swift */; };
@@ -54,6 +58,10 @@
 		0282C6EB232B991D00FCA38D /* 4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 4.json; sourceTree = SOURCE_ROOT; };
 		0282C6F3232BA3D700FCA38D /* 3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 3.json; sourceTree = "<group>"; };
 		0282C6F5232BA3DD00FCA38D /* 5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 5.json; sourceTree = "<group>"; };
+		0282C6F7232C8CA100FCA38D /* FavoriteVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVideoViewController.swift; sourceTree = "<group>"; };
+		0282C6FB232CA43600FCA38D /* FavoriteVideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVideoTableViewCell.swift; sourceTree = "<group>"; };
+		0282C6FC232CA43600FCA38D /* FavoriteVideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteVideoTableViewCell.xib; sourceTree = "<group>"; };
+		0282C6FF232D028000FCA38D /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		02A1A4A3230CFB8C0086D2A2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		02EC02F2230B89D0009B45F2 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		02EC02F4230B9024009B45F2 /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
@@ -101,6 +109,7 @@
 				0265147B230E9BCD0075D139 /* Video.swift */,
 				02EC02F2230B89D0009B45F2 /* Const.swift */,
 				02770A372312964C00D0C40B /* Category.swift */,
+				0282C6FF232D028000FCA38D /* Favorite.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -109,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				02FC1BC6230A3FF500D7E961 /* AppDelegate.swift */,
+				0282C6E7232B923600FCA38D /* IntroViewController.swift */,
 				02FC1BC8230A3FF500D7E961 /* ViewController.swift */,
 				02FC1BDA230A409800D7E961 /* LoginViewController.swift */,
 				02FC1BDC230A418A00D7E961 /* HomeViewController.swift */,
@@ -126,7 +136,9 @@
 				02FC1BED230A426300D7E961 /* VideoViewController.swift */,
 				02651477230E993E0075D139 /* VideoTableViewCell.swift */,
 				02651478230E993E0075D139 /* VideoTableViewCell.xib */,
-				0282C6E7232B923600FCA38D /* IntroViewController.swift */,
+				0282C6F7232C8CA100FCA38D /* FavoriteVideoViewController.swift */,
+				0282C6FB232CA43600FCA38D /* FavoriteVideoTableViewCell.swift */,
+				0282C6FC232CA43600FCA38D /* FavoriteVideoTableViewCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -257,6 +269,7 @@
 				0265147A230E993E0075D139 /* VideoTableViewCell.xib in Resources */,
 				02F69074230D57CA00CB70CE /* SearchCollectionViewCell.xib in Resources */,
 				0282C6F4232BA3D800FCA38D /* 3.json in Resources */,
+				0282C6FE232CA43600FCA38D /* FavoriteVideoTableViewCell.xib in Resources */,
 				0282C6EF232B991E00FCA38D /* 2.json in Resources */,
 				02FC1BD1230A3FF600D7E961 /* LaunchScreen.storyboard in Resources */,
 				02FC1BCE230A3FF600D7E961 /* Assets.xcassets in Resources */,
@@ -345,8 +358,11 @@
 				02FC1BC7230A3FF500D7E961 /* AppDelegate.swift in Sources */,
 				02FC1BE0230A41AC00D7E961 /* ImageSelectViewController.swift in Sources */,
 				02EC02F5230B9024009B45F2 /* PostData.swift in Sources */,
+				0282C700232D028000FCA38D /* Favorite.swift in Sources */,
+				0282C6F8232C8CA100FCA38D /* FavoriteVideoViewController.swift in Sources */,
 				02F69070230D538B00CB70CE /* SearchCollectionViewController.swift in Sources */,
 				02EC02F8230B9284009B45F2 /* PostTableViewCell.swift in Sources */,
+				0282C6FD232CA43600FCA38D /* FavoriteVideoTableViewCell.swift in Sources */,
 				02F69073230D57CA00CB70CE /* SearchCollectionViewCell.swift in Sources */,
 				02FC1BE4230A41DE00D7E961 /* SettingViewController.swift in Sources */,
 				0265147C230E9BCD0075D139 /* Video.swift in Sources */,

@@ -14,7 +14,11 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     
     var animationArray = ["1", "2", "3", "4", "5",]
-    var scrollStringArray = ["筋トレにまつわるあれこれを\n簡単に調べるアプリだよ！", "筋トレYoutuberの動画も見れるよ！", "プロテイン写真も投稿できるよ！", "気になる画像をタップして\n筋肉関連ニュースを見てみよう！", "現在地近くのジムを探せるよ！"]
+    var scrollStringArray = ["筋トレにまつわるあれこれを\n簡単に調べるアプリだよ！",
+                             "筋トレYoutuberの動画も見れるよ！",
+                             "プロテイン写真も投稿できるよ！",
+                             "気になる画像をタップして\n筋肉関連ニュースを見てみよう！",
+                             "現在地近くのジムを探せるよ！"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +40,6 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
             scrollView.addSubview(animationView)
         }
         
-        
-        
     }
     
     func setUpScroll() {
@@ -56,7 +58,5 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
             scrollView.addSubview(scrollLabel)
         }
     }
-
-	
 
 }
