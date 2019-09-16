@@ -55,6 +55,7 @@ class PostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         SVProgressHUD.showSuccess(withStatus: "投稿しました")
         // 全てのモーダルを閉じる
         UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
+        
     }
     // キャンセルボタンをタップしたときに呼ばれるメソッド
     @IBAction func handkleCancelButton(_ sender: Any) {
@@ -82,7 +83,7 @@ class PostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     // カテゴリ削除ボタンを押した時
     @IBAction func deleteCategoryButton(_ sender: Any) {
         // ポップアップを追加する
-        let alertController = UIAlertController(title: "選択したカテゴリーを削除しますか？", message: "メッセージ", preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: "選択したカテゴリーを削除しますか？", message: nil, preferredStyle: .alert)
         let action:UIAlertAction = UIAlertAction(title: "削除", style: .default) { (void) in
             
             if self.pickerView.selectedRow(inComponent: 0) > 2 {
@@ -100,12 +101,8 @@ class PostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             // HUDで削除を表示する
             SVProgressHUD.showSuccess(withStatus: "カテゴリーが削除されました")
         }
-        let action1:UIAlertAction = UIAlertAction(title: "action1", style: .destructive, handler: nil)
-        let action2:UIAlertAction = UIAlertAction(title: "action2", style: .destructive, handler: nil)
         let cancel:UIAlertAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
         alertController.addAction(action)
-        alertController.addAction(action1)
-        alertController.addAction(action2)
         alertController.addAction(cancel)
         present(alertController, animated: true, completion: nil)
     }
@@ -186,14 +183,5 @@ class PostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         selectedCategory = categoryArray[row].categoryName
         print(" \(selectedCategory) が選択された。")
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

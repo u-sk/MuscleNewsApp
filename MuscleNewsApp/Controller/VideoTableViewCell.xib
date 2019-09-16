@@ -45,7 +45,7 @@
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olv-HL-FRF">
                         <rect key="frame" x="10" y="260.5" width="300" height="38"/>
-                        <state key="normal" title="お気に入りに入れる"/>
+                        <state key="normal" title="お気に入りに追加"/>
                     </button>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

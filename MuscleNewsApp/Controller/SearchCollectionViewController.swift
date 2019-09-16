@@ -15,16 +15,9 @@ class SearchCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        
         //「SearchCollectionViewCell.xib」ファイルに作成したセルの定義内容をUINib(nibName:bundle)で取得します。
         self.collectionView!.register(UINib(nibName: "SearchCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
 
-        // Do any additional setup after loading the view.
-        
         // レイアウト設定(全て余白無し/縦横同じ比率)
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: self.view.frame.width / 2, height: self.view.frame.width / 2)
@@ -33,18 +26,6 @@ class SearchCollectionViewController: UICollectionViewController {
         layout.minimumLineSpacing = 0
         collectionView.collectionViewLayout = layout
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections

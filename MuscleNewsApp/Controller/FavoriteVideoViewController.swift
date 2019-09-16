@@ -7,37 +7,47 @@
 //
 
 import UIKit
+import RealmSwift
+import SVProgressHUD
 
 class FavoriteVideoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var favoriteVideoTableView: UITableView!
+
+    // Realmインスタンスを取得
+    let realm = try! Realm()
     
-    // お気に入り動画の配列(受け取り用)
-    var favoriteVideos = [Video]()
+    // お気に入り動画の配列(受け取り用) → Realmから取得するため、不要になった
+//    var favoriteVideos = [Video]()
+    
+    // Realmに保存している情報を全件取得する値を入れる変数
+    var favoriteVideos: Results<Favorite>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "お気に入り動画"
         
+        // Realmに保存している情報を全件取得する
+        favoriteVideos = realm.objects(Favorite.self).sorted(byKeyPath: "id", ascending: true)
+
         // tableViewデリゲート
         favoriteVideoTableView.dataSource = self
         favoriteVideoTableView.delegate = self
         
         let nib = UINib(nibName: "FavoriteVideoTableViewCell", bundle: nil)
         favoriteVideoTableView.register(nib, forCellReuseIdentifier: "FavVideoCell")
-
-      print("受け取ったお気に入り動画の配列：\(favoriteVideos)")
         
     }
     
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favoriteVideos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavVideoCell", for: indexPath) as! FavoriteVideoTableViewCell
-        cell.setCell(favoriteVideos[indexPath.row])
+        cell.setCell(favoriteVideos![indexPath.row])
 
         // セル内のボタン(お気に入り動画)のアクションをソースコードで設定する
         cell.tapVideoButton.addTarget(self, action:#selector(tapVideoButton(_:forEvent:)), for: .touchUpInside)
@@ -60,5 +70,28 @@ class FavoriteVideoViewController: UIViewController, UITableViewDataSource, UITa
         }
     }
     
+    // セルが削除が可能なことを伝えるメソッド
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    // Delete ボタンが押された時に呼ばれるメソッド
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // データベースから削除する
+            try! realm.write {
+                self.realm.delete(self.favoriteVideos[indexPath.row])
+                // 選択した投稿のデータの配列をテーブルビュー上から削除
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                favoriteVideos = try! Realm().objects(Favorite.self).sorted(byKeyPath: "id", ascending: true)
+                tableView.reloadData()
+                // HUDで削除完了を表示する
+                SVProgressHUD.showSuccess(withStatus: "お気に入り動画を削除しました")
+            }
+        } else {
+            print("削除できませんでした")
+            return
+        }
+    }
     
 }

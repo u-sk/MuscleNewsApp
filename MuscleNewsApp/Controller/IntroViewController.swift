@@ -59,4 +59,12 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         }
     }
 
+    // ログイン画面へ遷移 + viewControllerを最前面にする(モーダル削除後、IntroViewControllerが出ないように)
+    @IBAction func toLogin(_ sender: Any) {
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier: "View")
+        UIApplication.shared.keyWindow?.rootViewController = viewController
+    }
+    
+    
+    
 }

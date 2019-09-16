@@ -30,8 +30,6 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     // Realmインスタンスを取得
     let realm = try! Realm()
-    // favoriteを定義
-    var favorite = Favorite()
     
     // 以降内容をアップデートするとリスト内は自動的に更新される。
     var favoriteVideoArray = try! Realm().objects(Favorite.self)
@@ -65,7 +63,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
                 let json = JSON(jsonObject)
                 // "items"を取得
                 let Items = json["items"]
-                
+                print("ここで確認をする：\(Items)")
                 var videoDatas: [Video] = []
                 // Featureは10個の配列なのでループを回して取る
                 // 第一引数のkeyは使わないので、_にする
@@ -144,35 +142,36 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         let favoriteVideo = videos[indexPath!.row]
         favoriteVideos.append(favoriteVideo)
         SVProgressHUD.showSuccess(withStatus: "お気に入りに追加しました")
-
-//        print("タイトルです：\(favoriteVideos[indexPath!.row].title)")
-//        print("チャンネル名です：\(favoriteVideos[indexPath!.row].name)")
-//        print("サムネイルです：\(favoriteVideos[indexPath!.row].image)")
-//        print("動画URLです：\(favoriteVideos[indexPath!.row].videoid)")
         
+        // Favorite()のインスタンスを生成
+        let favorite = Favorite()
+        // IDに値を設定。タスクのidに1を足して他のIDと重ならない値に
+        if realm.objects(Favorite.self).count != 0 {
+            favorite.id = realm.objects(Favorite.self).max(ofProperty: "id")! + 1
+        }
         // Realmを使って保持する
         try! realm.write {
+            
             // お気に入り動画を追加(Realm)
-            self.favorite.title = favoriteVideos[indexPath!.row].title
-            self.favorite.name = favoriteVideos[indexPath!.row].name
-            self.favorite.image = favoriteVideos[indexPath!.row].image.pngData()!
-            self.favorite.videoid = favoriteVideos[indexPath!.row].videoid
-            self.realm.add(self.favorite, update: true)
+            // 選択された動画の情報をそれぞれの項目に代入する
+            favorite.title = videos[indexPath!.row].title
+            favorite.name = videos[indexPath!.row].name
+            // RealmではUIImage型が扱えないので、pngData型に変更
+            favorite.image = videos[indexPath!.row].image.pngData()!
+            favorite.videoid = videos[indexPath!.row].videoid
+            realm.add(favorite, update: true)
+            
             // Realmデータベースファイルまでのパスを表示
             print(Realm.Configuration.defaultConfiguration.fileURL!)
         }
-        
-        let favoriteVideoVC = storyboard?.instantiateViewController(withIdentifier: "Favorite") as! FavoriteVideoViewController
-        // 値を渡す
-        favoriteVideoVC.favoriteVideos = favoriteVideos
-        
+    
     }
 
     @IBAction func toFavoriteVC(_ sender: Any) {
         print("選択されたお気に入り動画の配列：\(favoriteVideos)")
         let favoriteVideoVC = storyboard?.instantiateViewController(withIdentifier: "Favorite") as! FavoriteVideoViewController
-        // 値を渡す
-        favoriteVideoVC.favoriteVideos = favoriteVideos
+          // 値を渡す → Realmから取得するため、不要になった
+//        favoriteVideoVC.favoriteVideos = favoriteVideos
         navigationController?.pushViewController(favoriteVideoVC, animated: true)
     }
     
