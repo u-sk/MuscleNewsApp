@@ -18,6 +18,7 @@ import RealmSwift
 class VideoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     @IBOutlet weak var videoList: UITableView!
 
+    // APIで取得した動画データ一覧
     var videos:[Video] = []
     
     // URLを入れる変数
@@ -26,13 +27,13 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     var videoIDArray = [String ]()
 
     // お気に入り動画の配列
-    var favoriteVideos:[Video] = []
+//    var favoriteVideos:[Video] = []
     
     // Realmインスタンスを取得
     let realm = try! Realm()
     
     // 以降内容をアップデートするとリスト内は自動的に更新される。
-    var favoriteVideoArray = try! Realm().objects(Favorite.self)
+//    var favoriteVideoArray = try! Realm().objects(Favorite.self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +57,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func setupVideo() {
             SVProgressHUD.show()
-        Alamofire.request("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=date&q=%E7%AD%8B%E3%83%88%E3%83%AC%0D%0A&type=video&key=AIzaSyDIasDKf1zm-6BaSh9tVahsCPjzR8iMQgY").responseJSON { response in
+        Alamofire.request("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=date&q=%E7%AD%8B%E3%83%88%E3%83%AC%0D%0A&type=video&key=APIキー").responseJSON { response in
             // 通信結果のJSON (ここまでがAlamofire)
             if let jsonObject = response.result.value {
                 // 使いやすいJSONにしてくれる(ここからSwiftyJSON)
@@ -130,7 +131,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
-    // セル内のボタン(お気に入り)がタップされた時に呼ばれるメソッド
+    // セル内のボタン(お気に入りに追加)がタップされた時に呼ばれるメソッド
     @objc func tapFavoriteBUtton(_ sender: UIButton, forEvent event: UIEvent) {
         print("DEBUG_PRINT: 動画ボタンがタップされました")
         // タップされたセルのインデックスを求める
@@ -139,12 +140,13 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         let indexPath = videoList.indexPathForRow(at: point)
         
         // 選択されたお気に入り動画
-        let favoriteVideo = videos[indexPath!.row]
-        favoriteVideos.append(favoriteVideo)
+//        let favoriteVideo = videos[indexPath!.row]
+//        favoriteVideos.append(favoriteVideo)
         SVProgressHUD.showSuccess(withStatus: "お気に入りに追加しました")
         
         // Favorite()のインスタンスを生成
         let favorite = Favorite()
+         // すでに存在しているタスクのidのうち最大のものを取得
         // IDに値を設定。タスクのidに1を足して他のIDと重ならない値に
         if realm.objects(Favorite.self).count != 0 {
             favorite.id = realm.objects(Favorite.self).max(ofProperty: "id")! + 1
@@ -163,12 +165,13 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
             
             // Realmデータベースファイルまでのパスを表示
             print(Realm.Configuration.defaultConfiguration.fileURL!)
+//            print("これが配列の中身です：\(favoriteVideoArray)")
         }
     
     }
 
     @IBAction func toFavoriteVC(_ sender: Any) {
-        print("選択されたお気に入り動画の配列：\(favoriteVideos)")
+//        print("選択されたお気に入り動画の配列：\(favoriteVideos)")
         let favoriteVideoVC = storyboard?.instantiateViewController(withIdentifier: "Favorite") as! FavoriteVideoViewController
           // 値を渡す → Realmから取得するため、不要になった
 //        favoriteVideoVC.favoriteVideos = favoriteVideos

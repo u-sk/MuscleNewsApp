@@ -68,7 +68,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        // curentUserがnilならごログインしていない
+        // curentUserがnilなら(ログインしていない)
         if Auth.auth().currentUser == nil {
             // ログインしていない時の処理
             // 該当のViewControllerを得る(Storyboad ID)

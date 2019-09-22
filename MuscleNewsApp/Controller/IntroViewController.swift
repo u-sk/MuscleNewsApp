@@ -13,7 +13,7 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     
-    var animationArray = ["1", "2", "3", "4", "5",]
+    var animationArray = ["1", "2", "3", "4", "5"]
     var scrollStringArray = ["筋トレにまつわるあれこれを\n簡単に調べるアプリだよ！",
                              "筋トレYoutuberの動画も見れるよ！",
                              "プロテイン写真も投稿できるよ！",
