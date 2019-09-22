@@ -22,6 +22,8 @@ http通信
 　- Alamofire  
 パース  
 　- SwiftyJSON  
+アニメーション  
+　- Lottie   
 画像加工  
 　- CLImageEditor  
 画面遷移  
@@ -30,8 +32,6 @@ http通信
 　- SVProgressHUD  
 GoogleMap  
 　- GoogleMapsSDK 
-アニメーション 
-　- Lottie  
 
 <WebAPI関連>  
 　- Yahoo!ローカルサーチAPI   
@@ -51,6 +51,7 @@ GoogleMap
 ・投稿にいいねを付ける  
 ・カテゴリーで投稿を検索  
 ・Youtubeの最新筋トレ動画を検索  
+・お気に入りの動画を保存する  
 ・キーワード検索でGoogleのニュースページに遷移  
-・現在地の近くにあるジムの地図上にピンを立てる  
+・現在地の近くにあるジムの地図上にピンを立てる    
 
