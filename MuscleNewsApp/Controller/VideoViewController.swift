@@ -125,10 +125,18 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         print("ここが場所です：\(indexPath!.row)")
         print("これがURLです：\(videoIDArray[indexPath!.row])")
         
-        // safaliへ画面遷移し、URLをもとにYoutubeを表示
-        if let url = URL(string: videoIDArray[indexPath!.row]) {
-            UIApplication.shared.open(url)
-        }
+//        // safaliへ画面遷移し、URLをもとにYoutubeを表示 → WebViewへ変更
+//        if let url = URL(string: videoIDArray[indexPath!.row]) {
+//            UIApplication.shared.open(url)
+//        }
+//
+        // WebViewへ画面遷移し、URLをもとにYoutubeを表示
+        // UserDefaultsを使ってデータの受け渡し
+        let webViewController = WebViewController()
+        let url = videoIDArray[indexPath!.row]
+        UserDefaults.standard.set(url, forKey: "url")
+        present(webViewController, animated: true, completion: nil)
+        
     }
     
     // セル内のボタン(お気に入りに追加)がタップされた時に呼ばれるメソッド

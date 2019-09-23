@@ -65,9 +65,17 @@ class FavoriteVideoViewController: UIViewController, UITableViewDataSource, UITa
         print("ここが場所です：\(indexPath!.row)")
         
         // safaliへ画面遷移し、URLをもとにYoutubeを表示
-        if let url = URL(string: favoriteVideos[indexPath!.row].videoid) {
-            UIApplication.shared.open(url)
-        }
+//        if let url = URL(string: favoriteVideos[indexPath!.row].videoid) {
+//            UIApplication.shared.open(url)
+//        }
+        
+        // WebViewへ画面遷移し、URLをもとにYoutubeを表示
+        // UserDefaultsを使ってデータの受け渡し
+        let webViewController = WebViewController()
+        let url = favoriteVideos[indexPath!.row].videoid
+        UserDefaults.standard.set(url, forKey: "url")
+        present(webViewController, animated: true, completion: nil)
+        
     }
     
     // セルが削除が可能なことを伝えるメソッド

@@ -30,6 +30,7 @@
 		02F69070230D538B00CB70CE /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F6906F230D538B00CB70CE /* SearchCollectionViewController.swift */; };
 		02F69073230D57CA00CB70CE /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F69071230D57CA00CB70CE /* SearchCollectionViewCell.swift */; };
 		02F69074230D57CA00CB70CE /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F69072230D57CA00CB70CE /* SearchCollectionViewCell.xib */; };
+		02F97289233870D600E4BB38 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F97288233870D600E4BB38 /* WebViewController.swift */; };
 		02FC1BC7230A3FF500D7E961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BC6230A3FF500D7E961 /* AppDelegate.swift */; };
 		02FC1BC9230A3FF500D7E961 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BC8230A3FF500D7E961 /* ViewController.swift */; };
 		02FC1BCC230A3FF500D7E961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02FC1BCA230A3FF500D7E961 /* Main.storyboard */; };
@@ -70,6 +71,7 @@
 		02F6906F230D538B00CB70CE /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
 		02F69071230D57CA00CB70CE /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		02F69072230D57CA00CB70CE /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
+		02F97288233870D600E4BB38 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		02FC1BC3230A3FF500D7E961 /* MuscleNewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuscleNewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02FC1BC6230A3FF500D7E961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02FC1BC8230A3FF500D7E961 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				0282C6F7232C8CA100FCA38D /* FavoriteVideoViewController.swift */,
 				0282C6FB232CA43600FCA38D /* FavoriteVideoTableViewCell.swift */,
 				0282C6FC232CA43600FCA38D /* FavoriteVideoTableViewCell.xib */,
+				02F97288233870D600E4BB38 /* WebViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				02FC1BE2230A41CF00D7E961 /* PostViewController.swift in Sources */,
 				02FC1BDB230A409800D7E961 /* LoginViewController.swift in Sources */,
 				02FC1BC9230A3FF500D7E961 /* ViewController.swift in Sources */,
+				02F97289233870D600E4BB38 /* WebViewController.swift in Sources */,
 				02FC1BC7230A3FF500D7E961 /* AppDelegate.swift in Sources */,
 				02FC1BE0230A41AC00D7E961 /* ImageSelectViewController.swift in Sources */,
 				02EC02F5230B9024009B45F2 /* PostData.swift in Sources */,
